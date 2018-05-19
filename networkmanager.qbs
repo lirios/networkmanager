@@ -12,5 +12,6 @@ Project {
     minimumQbsVersion: "1.9.0"
 
     references: [
+        "src/imports/networkmanager/networkmanager.qbs",
     ]
 }
