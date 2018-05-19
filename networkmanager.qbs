@@ -13,5 +13,6 @@ Project {
 
     references: [
         "src/imports/networkmanager/networkmanager.qbs",
+        "src/settings/networkmanager/networkmanager.qbs",
     ]
 }
