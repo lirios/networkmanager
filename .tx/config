@@ -1,0 +1,14 @@
+[main]
+host = https://www.transifex.com
+
+[liri-networkmanager.settings-module]
+type = QT
+source_lang = en
+source_file = src/settings/networkmanager/translations/networkmanager.ts
+file_filter = src/settings/networkmanager/translations/networkmanager_<lang>.ts
+
+[liri-networkmanager.settings-module-metadata]
+type = DESKTOP
+source_lang = en
+source_file = src/settings/networkmanager/metadata.desktop.in
+file_filter = src/settings/networkmanager/translations/metadata_<lang>.desktop
