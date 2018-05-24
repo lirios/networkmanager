@@ -2,7 +2,7 @@ import qbs 1.0
 
 LiriQmlPlugin {
     name: "nmplugin"
-    pluginPath: "Vibe/NetworkManager"
+    pluginPath: "Liri/NetworkManager"
 
     Depends { name: "Qt"; submodules: ["dbus"] }
     Depends { name: "KF5"; submodules: ["NetworkManagerQt", "ModemManagerQt"] }
@@ -18,7 +18,6 @@ LiriQmlPlugin {
     }
 
     cpp.defines: [
-        'VIBE_VERSION="' + project.version + '"',
         "WITH_MODEMMANAGER_SUPPORT"
     ]
 

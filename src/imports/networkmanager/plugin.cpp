@@ -1,10 +1,7 @@
 /****************************************************************************
- * This file is part of Vibe.
+ * This file is part of Liri.
  *
- * Copyright (C) 2015-2016 Pier Luigi Fiorini
- *
- * Author(s):
- *    Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+ * Copyright (C) 2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
  * $BEGIN_LICENSE:LGPL2.1+$
  *
@@ -45,8 +42,8 @@ class NetworkManagerPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        // @uri Vibe.NetworkManager
-        Q_ASSERT(QLatin1String(uri) == QLatin1String("Vibe.NetworkManager"));
+        // @uri Liri.NetworkManager
+        Q_ASSERT(QLatin1String(uri) == QLatin1String("Liri.NetworkManager"));
 
         qmlRegisterType<AvailableDevices>(uri, 1, 0, "AvailableDevices");
         qmlRegisterType<ConnectionIcon>(uri, 1, 0, "ConnectionIcon");

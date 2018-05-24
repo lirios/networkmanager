@@ -21,4 +21,4 @@
 
 #include "debug.h"
 
-Q_LOGGING_CATEGORY(PLASMA_NM, "vibe.networkmanager")
+Q_LOGGING_CATEGORY(PLASMA_NM, "liri.networkmanager")

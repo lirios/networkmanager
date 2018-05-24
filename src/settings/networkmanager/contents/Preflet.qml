@@ -26,7 +26,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
 import QtGSettings 1.0
 import Fluid.Controls 1.0 as FluidControls
-import Vibe.NetworkManager 1.0 as NM
+import Liri.NetworkManager 1.0 as NM
 import Liri.Settings 1.0
 
 PrefletPage {
