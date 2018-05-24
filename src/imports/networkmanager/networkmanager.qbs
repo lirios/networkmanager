@@ -2,7 +2,7 @@ import qbs 1.0
 
 LiriQmlPlugin {
     name: "nmplugin"
-    pluginPath: "Vibe/NetworkManager"
+    pluginPath: "Liri/NetworkManager"
 
     Depends { name: "Qt"; submodules: ["dbus"] }
     Depends { name: "KF5"; submodules: ["NetworkManagerQt", "ModemManagerQt"] }

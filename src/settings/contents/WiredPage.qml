@@ -24,7 +24,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
-import Vibe.NetworkManager 1.0 as NM
+import Liri.NetworkManager 1.0 as NM
 import Fluid.Controls 1.0 as FluidControls
 import Liri.Settings 1.0
 

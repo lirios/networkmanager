@@ -1,4 +1,4 @@
-module Vibe.NetworkManager
+module Liri.NetworkManager
 plugin nmplugin
 classname NetworkManagerPlugin
 typeinfo plugins.qmltypes

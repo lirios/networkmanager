@@ -27,7 +27,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Material 2.1
 import Fluid.Controls 1.0 as FluidControls
-import Vibe.NetworkManager 1.0 as NM
+import Liri.NetworkManager 1.0 as NM
 
 FluidControls.ListItem {
     id: listItem
