@@ -1,18 +1,19 @@
 [Desktop Entry]
-Encoding=UTF-8
 Type=Application
 Name=Network
 Comment=Control how you connect to the Internet
+#TRANSLATIONS
 Keywords=network;ethernet;wifi;wired;wireless;
 Icon=preferences-system-network
+TryExec=liri-settings
+Exec=liri-settings network
 Categories=Qt;X-Liri;Settings;
 OnlyShowIn=X-Liri;
 X-Liri-Settings-Category=hardware
-
-#TRANSLATIONS_DIR=translations
+X-Liri-Settings-SymbolicIcon=action/settings_ethernet
 
 
 # Translations
 Comment[hr_HR]=Kontrolira kako se spajate na internet
-Name[hr_HR]=Mreža
 Icon[hr_HR]=osobitosti-sustav-mreža
+Name[hr_HR]=Mreža
