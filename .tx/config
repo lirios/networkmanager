@@ -1,6 +1,18 @@
 [main]
 host = https://www.transifex.com
 
+[liri-networkmanager.indicator]
+type = QT
+source_lang = en
+source_file = src/indicators/networkmanager/translations/networkmanager.ts
+file_filter = src/indicators/networkmanager/translations/networkmanager_<lang>.ts
+
+[liri-networkmanager.indicator-metadata]
+type = DESKTOP
+source_lang = en
+source_file = src/indicators/networkmanager/metadata.desktop.in
+file_filter = src/indicators/networkmanager/translations/metadata_<lang>.desktop
+
 [liri-networkmanager.settings-module]
 type = QT
 source_lang = en
