@@ -2,7 +2,7 @@ import qbs 1.0
 import qbs.TextFile
 
 LiriSettingsModule {
-    shortName: "network"
+    shortName: "networkmanager"
     type: base.concat(["liri.settings.contents"])
 
     Group {
