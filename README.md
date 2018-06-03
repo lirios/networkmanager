@@ -73,6 +73,21 @@ You can also specify the following options:
 
  * `projects.NetworkManager.useStaticAnalyzer:true` to enable the Clang static analyzer
 
+## Translations
+
+We use Transifex to translate this project, please submit your
+translations [here](https://www.transifex.com/lirios/liri-networkmanager/dashboard/).
+
+```sh
+./scripts/txpush.sh
+```
+
+New translations can be pulled from Transifex with:
+
+```sh
+./scripts/txpull.sh
+```
+
 ## Notes
 
 ### Logging categories
