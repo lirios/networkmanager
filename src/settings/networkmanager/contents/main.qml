@@ -29,7 +29,7 @@ import Fluid.Controls 1.0 as FluidControls
 import Liri.NetworkManager 1.0 as NM
 import Liri.Settings 1.0
 
-PrefletPage {
+ModulePage {
     id: networkPreflet
 
     //property var profileDialog: ProfileDialog {}

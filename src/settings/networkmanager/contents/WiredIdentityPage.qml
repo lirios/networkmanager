@@ -27,7 +27,7 @@ import QtQuick.Controls 2.0
 import Fluid.Controls 1.0 as FluidControls
 import Liri.Settings 1.0
 
-PrefletPage {
+ModulePage {
     anchors.fill: parent
 
     ModuleContainer {
