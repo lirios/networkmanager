@@ -26,7 +26,7 @@ LiriSettingsModule {
             "IPAddressPage.qml",
             "MultiLineItem.qml",
             "PasswordListItem.qml",
-            "Preflet.qml",
+            "main.qml",
             "SecurityMD5.qml",
             "SecurityPage.qml",
             "SecurityTLS.qml",
