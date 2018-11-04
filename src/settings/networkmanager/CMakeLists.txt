@@ -1,0 +1,17 @@
+liri_add_settings_module(NetworkManager
+    CONTENTS
+        contents/HiddenWifiDialog.qml
+        contents/IPAddressField.qml
+        contents/IPAddressPage.qml
+        contents/main.qml
+        contents/MultiLineItem.qml
+        contents/PasswordListItem.qml
+        contents/SecurityMD5.qml
+        contents/SecurityPage.qml
+        contents/SecurityTLS.qml
+        contents/WiredIdentityPage.qml
+        contents/WiredPage.qml
+        contents/WirelessPage.qml
+    METADATA
+        metadata.desktop.in
+)

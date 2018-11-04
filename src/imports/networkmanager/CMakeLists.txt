@@ -1,0 +1,61 @@
+find_package(KF5NetworkManagerQt "${KF5_MIN_VERSION}" REQUIRED)
+find_package(KF5ModemManagerQt "${KF5_MIN_VERSION}" REQUIRED)
+
+liri_add_qml_plugin(nm
+    MODULE_PATH
+        "Liri/NetworkManager"
+    SOURCES
+        appletproxymodel.cpp
+        appletproxymodel.h
+        availabledevices.cpp
+        availabledevices.h
+        connectionicon.cpp
+        connectionicon.h
+        connectionmodel.cpp
+        connectionmodel.h
+        connectionsettings.cpp
+        connectionsettings.h
+        debug.cpp
+        debug.h
+        enabledconnections.cpp
+        enabledconnections.h
+        enums.cpp
+        enums.h
+        handler.cpp
+        handler.h
+        ipv4settings.cpp
+        ipv4settings.h
+        networkitemslist.cpp
+        networkitemslist.h
+        networkmanager.qbs
+        networkmodel.cpp
+        networkmodel.h
+        networkmodelitem.cpp
+        networkmodelitem.h
+        networkstatus.cpp
+        networkstatus.h
+        plugin.cpp
+        security8021xsettings.cpp
+        security8021xsettings.h
+        technologyproxymodel.cpp
+        technologyproxymodel.h
+        uiutils.cpp
+        uiutils.h
+        wiredsettings.cpp
+        wiredsettings.h
+        wirelesssettings.cpp
+        wirelesssettings.h
+    QML_FILES
+        qmldir
+        plugins.qmltypes
+    DEFINES
+        #QT_NO_CAST_FROM_ASCII
+        #QT_NO_FOREACH
+        QT_NO_KEYWORDS
+        WITH_MODEMMANAGER_SUPPORT
+    LIBRARIES
+        Qt5::Core
+        Qt5::DBus
+        KF5::NetworkManagerQt
+        KF5::ModemManagerQt
+)
