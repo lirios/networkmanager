@@ -27,6 +27,9 @@ find_package(Qt5 "${QT_MIN_VERSION}"
         DBus
         Xml
         Gui
+        Qml
+        Quick
+        LinguistTools
 )
 
 ## Add subdirectories:
