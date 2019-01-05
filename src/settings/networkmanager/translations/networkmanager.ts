@@ -226,39 +226,6 @@
     </message>
 </context>
 <context>
-    <name>Preflet</name>
-    <message>
-        <location filename="../contents/Preflet.qml" line="63"/>
-        <source>Wired</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../contents/Preflet.qml" line="84"/>
-        <source>Wireless</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../contents/Preflet.qml" line="104"/>
-        <source>Bluetooth</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../contents/Preflet.qml" line="124"/>
-        <source>Wimax</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../contents/Preflet.qml" line="144"/>
-        <source>ADSL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../contents/Preflet.qml" line="164"/>
-        <source>VPN</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>SecurityMD5</name>
     <message>
         <location filename="../contents/SecurityMD5.qml" line="36"/>
@@ -464,6 +431,39 @@
     <message>
         <location filename="../contents/WirelessPage.qml" line="148"/>
         <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="../contents/main.qml" line="63"/>
+        <source>Wired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="84"/>
+        <source>Wireless</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="104"/>
+        <source>Bluetooth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="124"/>
+        <source>Wimax</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="144"/>
+        <source>ADSL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="164"/>
+        <source>VPN</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
