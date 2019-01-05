@@ -13,5 +13,5 @@ liri_add_settings_module(NetworkManager
         contents/WiredPage.qml
         contents/WirelessPage.qml
     METADATA
-        metadata.desktop.in
+        metadata.desktop
 )

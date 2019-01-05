@@ -4,5 +4,5 @@ liri_add_indicator(NetworkManager
         contents/ConnectionItem.qml
         contents/main.qml
     METADATA
-        metadata.desktop.in
+        metadata.desktop
 )
