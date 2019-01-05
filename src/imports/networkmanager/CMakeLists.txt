@@ -4,6 +4,8 @@ find_package(KF5ModemManagerQt "${KF5_MIN_VERSION}" REQUIRED)
 liri_add_qml_plugin(nm
     MODULE_PATH
         "Liri/NetworkManager"
+    VERSION
+        "1.0"
     SOURCES
         appletproxymodel.cpp
         appletproxymodel.h
@@ -47,7 +49,6 @@ liri_add_qml_plugin(nm
         wirelesssettings.h
     QML_FILES
         qmldir
-        plugins.qmltypes
     DEFINES
         #QT_NO_CAST_FROM_ASCII
         #QT_NO_FOREACH
