@@ -14,6 +14,6 @@ X-Liri-Settings-SymbolicIcon=action/settings_ethernet
 
 
 # Translations
-Comment[zh_TW]=控制如何連接網路
 Icon[zh_TW]=偏好設定—系統—網路
 Name[zh_TW]=網際網路
+Comment[zh_TW]=控制如何連接網路

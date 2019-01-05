@@ -14,6 +14,6 @@ X-Liri-Settings-SymbolicIcon=action/settings_ethernet
 
 
 # Translations
-Comment[da]=Styr hvordan du opretter forbindelse til internettet
 Icon[da]=preferences-system-network
 Name[da]=Netværk
+Comment[da]=Styr hvordan du opretter forbindelse til internettet

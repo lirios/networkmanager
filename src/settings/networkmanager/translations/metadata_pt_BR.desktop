@@ -14,6 +14,6 @@ X-Liri-Settings-SymbolicIcon=action/settings_ethernet
 
 
 # Translations
-Comment[pt_BR]=Controlar como você se conecta à Internet
 Icon[pt_BR]=preferences-system-network
 Name[pt_BR]=Rede
+Comment[pt_BR]=Controlar como você se conecta à Internet

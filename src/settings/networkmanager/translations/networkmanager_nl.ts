@@ -1,383 +1,468 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" version="2.1">
 <context>
-    <name>DetailsPane</name>
-    <message>
-        <location filename="../contents/DetailsPane.qml" line="42"/>
-        <source>Hardware Address:</source>
-        <translation>Hardware-adres:</translation>
-    </message>
-    <message>
-        <location filename="../contents/DetailsPane.qml" line="48"/>
-        <source>IP Address:</source>
-        <translation>IP-adres:</translation>
-    </message>
-    <message>
-        <location filename="../contents/DetailsPane.qml" line="55"/>
-        <source>Subnet Mask:</source>
-        <translation>Subnet Mask:</translation>
-    </message>
-    <message>
-        <location filename="../contents/DetailsPane.qml" line="62"/>
-        <source>Default Gateway:</source>
-        <translation>Standaard-gateway:</translation>
-    </message>
-    <message>
-        <location filename="../contents/DetailsPane.qml" line="69"/>
-        <source>DNS Server:</source>
-        <translation>DNS-server:</translation>
-    </message>
-    <message>
-        <location filename="../contents/DetailsPane.qml" line="76"/>
-        <source>Domain names:</source>
-        <translation>Domeinnamen:</translation>
-    </message>
-</context>
-<context>
     <name>HiddenWifiDialog</name>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="35"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="32"/>
         <source>Connect to a hidden Wi-Fi network</source>
         <translation>Verbind met een verborgen Wi-Fi netwerk</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="57"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="54"/>
         <source>Hidden Wi-Fi network</source>
         <translation>Verborgen Wi-Fi netwerk</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="62"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="59"/>
         <source>Enter the name and security details of the hidden Wi-Fi network you wish to connect to.</source>
         <translation>Vul de naam en de beveiligingsgegevens in van het verborgen Wi-Fi netwerk waarmee je wil verbinden.</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="75"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="72"/>
         <source>Network name:</source>
         <translation>Netwerknaam:</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="87"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="84"/>
         <source>Wi-Fi security:</source>
         <translation>Wi-Fi-beveiliging:</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="94"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="91"/>
         <source>None</source>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="95"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="92"/>
         <source>WEP 40/128-bit Key (Hex or ASCII)</source>
         <translation>WEP 40/128-bit Sleutel (Hex of ASCII)</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="96"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="93"/>
         <source>WEP 128-bit Passphrase</source>
         <translation>WEP 128-bit Wachwoord</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="97"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="94"/>
         <source>LEAP</source>
         <translation>LEAP</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="98"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="95"/>
         <source>Dynamic WEP (802.1x)</source>
         <translation>Dynamische WEP (802.1x)</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="99"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="96"/>
         <source>WPA &amp; WPA2 Personal</source>
         <translation>WPA &amp; WPA2 Personal</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="100"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="97"/>
         <source>WPA &amp; WPA2 Enterprise</source>
         <translation>WPA &amp; WPA2 Enterprise</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="101"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="98"/>
         <source>WPS</source>
         <translation>WPS</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="119"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="116"/>
         <source>Key:</source>
         <translation>Sleutel:</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="135"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="132"/>
         <source>Show key</source>
         <translation>Laat sleutel zien</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="140"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="137"/>
         <source>WEP index:</source>
         <translation>WEP index:</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="147"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="144"/>
         <source>1 (Default)</source>
         <translation>1 (Standaard)</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="148"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="145"/>
         <source>2</source>
         <translation>2</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="148"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="145"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="148"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="145"/>
         <source>4</source>
         <translation>4</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="152"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="149"/>
         <source>Authentication:</source>
         <translation>Authenticatie:</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="159"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="156"/>
         <source>Open System</source>
         <translation>Open Systeem</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="159"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="156"/>
         <source>Shared Key</source>
         <translation>Gedeelde Sleutel</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="173"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="170"/>
         <source>Username:</source>
         <translation>Gebruikersnaam:</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="185"/>
-        <location filename="../contents/HiddenWifiDialog.qml" line="217"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="182"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="214"/>
         <source>Password:</source>
         <translation>Wachtwoord:</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="202"/>
-        <location filename="../contents/HiddenWifiDialog.qml" line="234"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="199"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="231"/>
         <source>Show password</source>
         <translation>Laat wachtwoord zien</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="253"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="250"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location filename="../contents/HiddenWifiDialog.qml" line="259"/>
+        <location filename="../contents/HiddenWifiDialog.qml" line="256"/>
         <source>Connect</source>
         <translation>Verbinden</translation>
     </message>
 </context>
 <context>
-    <name>IPv4Pane</name>
+    <name>IPAddressPage</name>
     <message>
-        <location filename="../contents/IPv4Pane.qml" line="40"/>
-        <source>Obtain an IP address automatically</source>
-        <translation>Verkrijg automatisch een IP-adres</translation>
+        <location filename="../contents/IPAddressPage.qml" line="35"/>
+        <source>Addresses</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IPv4Pane.qml" line="50"/>
-        <source>Use the following IP address</source>
-        <translation>Gebruik het volgende IP-adres</translation>
+        <location filename="../contents/IPAddressPage.qml" line="38"/>
+        <source>Configuration</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IPv4Pane.qml" line="61"/>
-        <source>IP Address:</source>
-        <translation>IP-adres:</translation>
+        <location filename="../contents/IPAddressPage.qml" line="42"/>
+        <source>Automatic (DHCP)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IPv4Pane.qml" line="65"/>
-        <source>Subnet Mask:</source>
-        <translation>Subnet Mask:</translation>
+        <location filename="../contents/IPAddressPage.qml" line="43"/>
+        <source>Manual</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IPv4Pane.qml" line="69"/>
-        <source>Default Gateway:</source>
-        <translation>Default Gateway:</translation>
+        <location filename="../contents/IPAddressPage.qml" line="44"/>
+        <source>Link-Local Only</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IPv4Pane.qml" line="86"/>
-        <source>Obtain DNS server address automatically</source>
-        <translation>Verkrijg DNS server adres automatisch</translation>
+        <location filename="../contents/IPAddressPage.qml" line="45"/>
+        <source>Disabled</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IPv4Pane.qml" line="90"/>
-        <source>Use the following DNS server addresses</source>
-        <translation>Gebruik het volgende DNS server adres</translation>
+        <location filename="../contents/IPAddressPage.qml" line="52"/>
+        <source>DNS</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IPv4Pane.qml" line="95"/>
-        <source>Primary DNS Server:</source>
-        <translation>Primaire DNS Server:</translation>
+        <location filename="../contents/IPAddressPage.qml" line="55"/>
+        <source>Automatic</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IPv4Pane.qml" line="99"/>
-        <source>Secondary DNS Server:</source>
-        <translation>Secundaire DNS Server:</translation>
-    </message>
-    <message>
-        <location filename="../contents/IPv4Pane.qml" line="112"/>
-        <source>Connect automatically</source>
-        <translation>Verbind automatisch</translation>
+        <location filename="../contents/IPAddressPage.qml" line="72"/>
+        <source>Routes</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
-    <name>IdentityPane</name>
+    <name>MultiLineItem</name>
     <message>
-        <location filename="../contents/IdentityPane.qml" line="43"/>
-        <source>Name:</source>
-        <translation>Naam:</translation>
+        <location filename="../contents/MultiLineItem.qml" line="40"/>
+        <source>Address</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IdentityPane.qml" line="49"/>
-        <source>MAC Address:</source>
-        <translation>MAC Adres:</translation>
+        <location filename="../contents/MultiLineItem.qml" line="51"/>
+        <source>Remove</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/IdentityPane.qml" line="55"/>
-        <source>Cloned Address:</source>
-        <translation>Cloned Adres:</translation>
-    </message>
-    <message>
-        <location filename="../contents/IdentityPane.qml" line="61"/>
-        <source>MTU:</source>
-        <translation>MTU:</translation>
-    </message>
-    <message>
-        <location filename="../contents/IdentityPane.qml" line="76"/>
-        <source>Profile %1</source>
-        <translation>Profiel %1</translation>
-    </message>
-    <message>
-        <location filename="../contents/IdentityPane.qml" line="102"/>
-        <source>Connect automatically</source>
-        <translation>Verbind automatisch</translation>
+        <location filename="../contents/MultiLineItem.qml" line="67"/>
+        <source>Add</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
-    <name>Preflet</name>
+    <name>PasswordListItem</name>
     <message>
-        <location filename="../contents/Preflet.qml" line="140"/>
-        <source>Network service unavailable</source>
-        <translation>Netwerk service niet beschikbaar</translation>
+        <location filename="../contents/PasswordListItem.qml" line="39"/>
+        <source>Password</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/Preflet.qml" line="144"/>
-        <source>Please make sure the &quot;NetworkManager&quot; service is running.</source>
-        <translation>Verzeker dat de &quot;NetwerkManager&quot; service draait.</translation>
-    </message>
-</context>
-<context>
-    <name>SecurityPane</name>
-    <message>
-        <location filename="../contents/SecurityPane.qml" line="44"/>
-        <source>802.1x Security</source>
-        <translation>802.1x Beveiliging</translation>
-    </message>
-    <message>
-        <location filename="../contents/SecurityPane.qml" line="50"/>
-        <source>Authentication:</source>
-        <translation>Authenticatie:</translation>
-    </message>
-    <message>
-        <location filename="../contents/SecurityPane.qml" line="56"/>
-        <source>Username:</source>
-        <translation>Gebruikersnaam:</translation>
-    </message>
-    <message>
-        <location filename="../contents/SecurityPane.qml" line="62"/>
-        <source>Password:</source>
-        <translation>Wachtwoord:</translation>
-    </message>
-    <message>
-        <location filename="../contents/SecurityPane.qml" line="85"/>
-        <source>None</source>
-        <translation>Geen</translation>
-    </message>
-    <message>
-        <location filename="../contents/SecurityPane.qml" line="85"/>
-        <source>MD5</source>
-        <translation>MD5</translation>
-    </message>
-    <message>
-        <location filename="../contents/SecurityPane.qml" line="97"/>
-        <source>Ask for this password every time</source>
-        <translation>Vraag voor wachtwoord iedere keer</translation>
-    </message>
-    <message>
-        <location filename="../contents/SecurityPane.qml" line="101"/>
+        <location filename="../contents/PasswordListItem.qml" line="45"/>
         <source>Show password</source>
-        <translation>Laat wachtwoord zien</translation>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>SecurityMD5</name>
+    <message>
+        <location filename="../contents/SecurityMD5.qml" line="36"/>
+        <source>User name</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>SecurityPage</name>
+    <message>
+        <location filename="../contents/SecurityPage.qml" line="44"/>
+        <source>Security</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/SecurityPage.qml" line="48"/>
+        <source>Enabled</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/SecurityPage.qml" line="56"/>
+        <source>Authentication</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>SecurityTLS</name>
+    <message>
+        <location filename="../contents/SecurityTLS.qml" line="37"/>
+        <source>Identity</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/SecurityTLS.qml" line="48"/>
+        <source>User certificate</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/SecurityTLS.qml" line="62"/>
+        <source>CA certificate</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/SecurityTLS.qml" line="68"/>
+        <source>No CA certificate is required</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/SecurityTLS.qml" line="76"/>
+        <source>Private key password</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>WiredIdentityPage</name>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="34"/>
+        <source>General</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="41"/>
+        <source>Name</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="49"/>
+        <source>Connect automatically</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="58"/>
+        <source>Make available to other users</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="66"/>
+        <source>Address</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="69"/>
+        <source>Link Speed</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="77"/>
+        <location filename="../contents/WiredIdentityPage.qml" line="112"/>
+        <source>Automatic</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="85"/>
+        <source>MAC address</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="96"/>
+        <source>Cloned Address</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredIdentityPage.qml" line="104"/>
+        <source>MTU</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>WiredPage</name>
     <message>
-        <location filename="../contents/WiredPage.qml" line="73"/>
-        <source>Connected</source>
-        <translation>Verbonden</translation>
+        <location filename="../contents/WiredPage.qml" line="46"/>
+        <source>Wired</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/WiredPage.qml" line="133"/>
-        <source>Add Profile...</source>
-        <translation>Voeg Profiel Toe...</translation>
+        <location filename="../contents/WiredPage.qml" line="52"/>
+        <source>802.1x Security</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredPage.qml" line="59"/>
+        <source>MD5</source>
+        <extracomment>Security method</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredPage.qml" line="64"/>
+        <source>TLS</source>
+        <extracomment>Security method</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredPage.qml" line="69"/>
+        <source>FAST</source>
+        <extracomment>Security method</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredPage.qml" line="74"/>
+        <source>Tunneled TLS</source>
+        <extracomment>Security method</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredPage.qml" line="79"/>
+        <source>Protected EAP (PEAP)</source>
+        <extracomment>Security method</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredPage.qml" line="86"/>
+        <source>IPv4</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/WiredPage.qml" line="92"/>
+        <source>IPv6</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>WirelessPage</name>
     <message>
-        <location filename="../contents/WirelessPage.qml" line="54"/>
+        <location filename="../contents/WirelessPage.qml" line="50"/>
         <source>Wireless</source>
         <translation>Draadloos</translation>
     </message>
     <message>
-        <location filename="../contents/WirelessPage.qml" line="61"/>
+        <location filename="../contents/WirelessPage.qml" line="57"/>
         <source>Connected</source>
         <translation>Verbonden</translation>
     </message>
     <message>
-        <location filename="../contents/WirelessPage.qml" line="61"/>
+        <location filename="../contents/WirelessPage.qml" line="57"/>
         <source>Disconnected</source>
         <translation>Niet Verbonden</translation>
     </message>
     <message>
-        <location filename="../contents/WirelessPage.qml" line="62"/>
+        <location filename="../contents/WirelessPage.qml" line="58"/>
         <source>Unavailable</source>
         <translation>Onbeschikbaar</translation>
     </message>
     <message>
-        <location filename="../contents/WirelessPage.qml" line="72"/>
+        <location filename="../contents/WirelessPage.qml" line="68"/>
         <source>Rescan</source>
         <translation>Herscan</translation>
     </message>
     <message>
-        <location filename="../contents/WirelessPage.qml" line="78"/>
+        <location filename="../contents/WirelessPage.qml" line="74"/>
         <source>Enable</source>
         <translation>Zet Aan</translation>
     </message>
     <message>
-        <location filename="../contents/WirelessPage.qml" line="138"/>
+        <location filename="../contents/WirelessPage.qml" line="134"/>
         <source>Use as Hotspot...</source>
         <translation>Gebruik als een Hotspot...</translation>
     </message>
     <message>
-        <location filename="../contents/WirelessPage.qml" line="143"/>
+        <location filename="../contents/WirelessPage.qml" line="139"/>
         <source>Connect to Hidden Network...</source>
         <translation>Verbind met een verborgen Netwerk...</translation>
     </message>
     <message>
-        <location filename="../contents/WirelessPage.qml" line="152"/>
+        <location filename="../contents/WirelessPage.qml" line="148"/>
         <source>History</source>
         <translation>Geschiedenis</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="../contents/main.qml" line="63"/>
+        <source>Wired</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="84"/>
+        <source>Wireless</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="104"/>
+        <source>Bluetooth</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="124"/>
+        <source>Wimax</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="144"/>
+        <source>ADSL</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="164"/>
+        <source>VPN</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

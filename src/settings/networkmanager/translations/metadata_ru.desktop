@@ -14,5 +14,6 @@ X-Liri-Settings-SymbolicIcon=action/settings_ethernet
 
 
 # Translations
-Comment[ru]=Параметры подключения к интернету
+Icon[ru]=preferences-system-network
 Name[ru]=Сеть
+Comment[ru]=Параметры подключения к интернету
