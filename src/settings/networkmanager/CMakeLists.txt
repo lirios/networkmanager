@@ -12,6 +12,4 @@ liri_add_settings_module(NetworkManager
         contents/WiredIdentityPage.qml
         contents/WiredPage.qml
         contents/WirelessPage.qml
-    METADATA
-        metadata.desktop
 )
