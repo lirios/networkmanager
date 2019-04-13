@@ -23,7 +23,8 @@
 
 import QtQuick 2.1
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.0
+import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import QtGSettings 1.0
 import Fluid.Controls 1.0 as FluidControls
 import Liri.NetworkManager 1.0 as NM
@@ -32,27 +33,35 @@ import Liri.Settings 1.0
 ModulePage {
     id: networkPreflet
 
-    readonly property bool networkAvailable: connectionIconProvider.connectionIcon !== "network-unavailable"
+    header: ToolBar {
+        Material.primary: Material.color(Material.BlueGrey, Material.Shade400)
+        Material.theme: Material.Dark
 
-    //property var profileDialog: ProfileDialog {}
+        Switch {
+            id: wirelessSwitch
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right
+            anchors.rightMargin: 8
 
-    NM.ConnectionIcon {
-        id: connectionIconProvider
-
-        function massageIconName(iconName) {
-            var newName = iconName.replace("-activated", "");
-            if (newName !== "")
-                return newName + "-symbolic";
-            return newName;
+            text: qsTr("Use Wi-Fi")
+            onCheckedChanged: networking.wirelessEnabled = checked
         }
     }
 
-    NM.Handler {
-        id: handler
+    Component.onCompleted: {
+        wirelessSwitch.checked = networking.wirelessEnabled;
     }
 
-    NM.ConnectionModel {
-        id: connectionModel
+    NM.Networking {
+        id: networking
+    }
+
+    NM.NetworkModel {
+        id: networkModel
+    }
+
+    NM.NetworkSettings {
+        id: networkSettings
     }
 
     Component {
@@ -61,130 +70,188 @@ ModulePage {
         WiredPage {}
     }
 
-    FluidControls.Placeholder {
-        anchors.centerIn: parent
-        icon.source: FluidControls.Utils.iconUrl("alert/warning")
-        text: qsTr("Please make sure the \"NetworkManager\" service is running.")
-        visible: !networkAvailable
+    Component {
+        id: wirelessPage
+
+        WirelessPage {}
     }
 
-    ModuleContainer {
-        title: qsTr("Wired")
-        visible: networkAvailable && wiredRepeater.count > 0
+    StackLayout {
+        anchors.fill: parent
+        currentIndex: networking.enabled ? 1 : 0
 
-        Repeater {
-            id: wiredRepeater
-
-            model: NM.TechnologyProxyModel {
-                type: NM.TechnologyProxyModel.WiredType
-                sourceModel: connectionModel
-            }
-
-            FluidControls.ListItem {
-                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
-
-                text: model.ItemUniqueName
-                onClicked: window.pageStack.push(wiredPage, {"model": model})
+        Item {
+            FluidControls.Placeholder {
+                anchors.centerIn: parent
+                icon.source: FluidControls.Utils.iconUrl("alert/warning")
+                text: qsTr("Please make sure the \"NetworkManager\" service is running.")
             }
         }
-    }
 
-    ModuleContainer {
-        title: qsTr("Wireless")
-        visible: networkAvailable && wirelessRepeater.count > 0
+        Item {
+            ScrollView {
+                anchors.fill: parent
+                clip: true
 
-        Repeater {
-            id: wirelessRepeater
+                Column {
+                    ModuleContainer {
+                        title: qsTr("Wired")
+                        width: networkPreflet.width
+                        visible: networking.enabled && wiredRepeater.count > 0
 
-            model: NM.TechnologyProxyModel {
-                type: NM.TechnologyProxyModel.WirelessType
-                sourceModel: connectionModel
-            }
+                        Repeater {
+                            id: wiredRepeater
 
-            FluidControls.ListItem {
-                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
+                            model: NM.TechnologyProxyModel {
+                                type: NM.TechnologyProxyModel.WiredType
+                                sourceModel: networkModel
+                            }
 
-                text: model.ItemUniqueName
-            }
-        }
-    }
+                            FluidControls.ListItem {
+                                icon.source: FluidControls.Utils.iconUrl(model.connectionIcon)
 
-    ModuleContainer {
-        title: qsTr("Bluetooth")
-        visible: networkAvailable && bluetoothRepeater.count > 0
+                                text: model.itemUniqueName
+                                subText: model.connectionStateString
+                                onClicked: window.pageStack.push(wiredPage, {"model": model})
+                            }
+                        }
+                    }
 
-        Repeater {
-            id: bluetoothRepeater
+                    ModuleContainer {
+                        title: qsTr("Wireless")
+                        width: networkPreflet.width
+                        visible: networking.enabled && networking.wirelessEnabled &&
+                                 networking.wirelessHardwareEnabled
 
-            model: NM.TechnologyProxyModel {
-                type: NM.TechnologyProxyModel.BluetoothType
-                sourceModel: connectionModel
-            }
+                        FluidControls.ListItem {
+                            icon.source: FluidControls.Utils.iconUrl("content/add")
+                            text: qsTr("Add Network")
+                        }
 
-            FluidControls.ListItem {
-                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
+                        Repeater {
+                            id: wirelessRepeater
 
-                text: model.ItemUniqueName
-            }
-        }
-    }
+                            model: NM.TechnologyProxyModel {
+                                type: NM.TechnologyProxyModel.WirelessType
+                                sourceModel: networkModel
+                                showInactiveConnections: true
+                            }
 
-    ModuleContainer {
-        title: qsTr("Wimax")
-        visible: networkAvailable && wimaxRepeater.count > 0
+                            FluidControls.ListItem {
+                                icon.source: FluidControls.Utils.iconUrl(model.connectionIcon)
 
-        Repeater {
-            id: wimaxRepeater
+                                text: model.itemUniqueName
+                                subText: model.connectionStateString
+                                onClicked: window.pageStack.push(wirelessPage, {"model": model})
+                            }
+                        }
+                    }
 
-            model: NM.TechnologyProxyModel {
-                type: NM.TechnologyProxyModel.WimaxType
-                sourceModel: connectionModel
-            }
+                    /*
+                    ModuleContainer {
+                        title: qsTr("Bluetooth")
+                        width: networkPreflet.width
+                        visible: networking.enabled && bluetoothRepeater.count > 0
 
-            FluidControls.ListItem {
-                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
+                        Repeater {
+                            id: bluetoothRepeater
 
-                text: model.ItemUniqueName
-            }
-        }
-    }
+                            model: NM.TechnologyProxyModel {
+                                type: NM.TechnologyProxyModel.BluetoothType
+                                sourceModel: networkModel
+                            }
 
-    ModuleContainer {
-        title: qsTr("ADSL")
-        visible: networkAvailable && adslRepeater.count > 0
+                            FluidControls.ListItem {
+                                icon.source: FluidControls.Utils.iconUrl(model.connectionIcon)
 
-        Repeater {
-            id: adslRepeater
+                                text: model.itemUniqueName
+                                subText: model.connectionStateString
+                            }
+                        }
+                    }
 
-            model: NM.TechnologyProxyModel {
-                type: NM.TechnologyProxyModel.AdslType
-                sourceModel: connectionModel
-            }
+                    ModuleContainer {
+                        title: qsTr("Wimax")
+                        width: networkPreflet.width
+                        visible: networking.enabled && wimaxRepeater.count > 0
 
-            FluidControls.ListItem {
-                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
+                        Repeater {
+                            id: wimaxRepeater
 
-                text: model.ItemUniqueName
-            }
-        }
-    }
+                            model: NM.TechnologyProxyModel {
+                                type: NM.TechnologyProxyModel.WimaxType
+                                sourceModel: networkModel
+                            }
 
-    ModuleContainer {
-        title: qsTr("VPN")
-        visible: networkAvailable && vpnRepeater.count > 0
+                            FluidControls.ListItem {
+                                icon.source: FluidControls.Utils.iconUrl(model.connectionIcon)
 
-        Repeater {
-            id: vpnRepeater
+                                text: model.itemUniqueName
+                                subText: model.connectionStateString
+                            }
+                        }
+                    }
 
-            model: NM.TechnologyProxyModel {
-                type: NM.TechnologyProxyModel.VpnType
-                sourceModel: connectionModel
-            }
+                    ModuleContainer {
+                        title: qsTr("ADSL")
+                        width: networkPreflet.width
+                        visible: networking.enabled && networking.mobileEnabled &&
+                                 networking.mobileHardwareEnabled && adslRepeater.count > 0
 
-            FluidControls.ListItem {
-                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
+                        Repeater {
+                            id: adslRepeater
 
-                text: model.ItemUniqueName
+                            model: NM.TechnologyProxyModel {
+                                type: NM.TechnologyProxyModel.AdslType
+                                sourceModel: networkModel
+                            }
+
+                            FluidControls.ListItem {
+                                icon.source: FluidControls.Utils.iconUrl(model.connectionIcon)
+
+                                text: model.itemUniqueName
+                                subText: model.connectionStateString
+                            }
+                        }
+                    }
+
+                    ModuleContainer {
+                        title: qsTr("VPN")
+                        width: networkPreflet.width
+                        visible: networking.enabled
+
+                        FluidControls.ListItem {
+                            icon.source: FluidControls.Utils.iconUrl("content/add")
+                            text: qsTr("Add VPN")
+                        }
+
+                        Repeater {
+                            id: vpnRepeater
+
+                            model: NM.TechnologyProxyModel {
+                                type: NM.TechnologyProxyModel.VpnType
+                                sourceModel: networkModel
+                            }
+
+                            FluidControls.ListItem {
+                                icon.source: FluidControls.Utils.iconUrl(model.connectionIcon)
+
+                                text: model.itemUniqueName
+                                subText: model.connectionStateString
+                            }
+                        }
+                    }
+                    */
+
+                    ModuleContainer {
+                        width: networkPreflet.width
+
+                        FluidControls.ListItem {
+                            text: qsTr("Network Proxy")
+                            valueText: qsTr("Off")
+                        }
+                    }
+                }
             }
         }
     }

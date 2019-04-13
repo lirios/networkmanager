@@ -1,8 +1,7 @@
 /****************************************************************************
  * This file is part of Liri.
  *
- * Copyright (C) 2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
- * Copyright (C) 2013-2014 Jan Grulich <jgrulich@redhat.com>
+ * Copyright (C) 2019 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
  * $BEGIN_LICENSE:GPL3+$
  *
@@ -32,50 +31,46 @@ import Liri.NetworkManager 1.0 as NM
 FluidControls.ListItem {
     id: listItem
 
-    property bool predictableWirelessPassword: !Uuid && Type === NM.Enums.Wireless &&
-                                               (SecurityType === NM.Enums.StaticWep || SecurityType === NM.Enums.WpaPsk ||
-                                                SecurityType === NM.Enums.Wpa2Psk)
-    property bool showSpeed: ConnectionState === NM.Enums.Activated &&
-                             (Type === NM.Enums.Wimax ||
-                              Type === NM.Enums.Wired ||
-                              Type === NM.Enums.Wireless ||
-                              Type === NM.Enums.Gsm ||
-                              Type === NM.Enums.Cdma)
-
-    onClicked: {
-        if (ConnectionState === NM.Enums.Deactivated) {
-            if (predictableWirelessPassword) {
-                passwordDialog.open()
-            } else if (Uuid) {
-                handler.activateConnection(ConnectionPath, DevicePath, SpecificPath)
-            } else {
-                handler.addAndActivateConnection(DevicePath, SpecificPath)
-            }
-        } else {
-            handler.deactivateConnection(ConnectionPath, DevicePath)
+    icon.source: FluidControls.Utils.iconUrl(model.connectionIcon)
+    text: model.itemUniqueName
+    subText: {
+        switch (model.connectionState) {
+        case NM.NetworkModelItem.Activating:
+            if (model.type === NM.NetworkModelItem.Vpn)
+                return model.vpnState;
+            else
+                return model.deviceState;
+        case NM.NetworkModelItem.Deactivating:
+            if (model.type === NM.NetworkModelItem.Vpn)
+                return model.vpnState;
+            else
+                return model.deviceState;
+        case NM.NetworkModelItem.Deactivated:
+            if (model.securityType > NM.NetworkModelItem.None)
+                return qsTr("%1, %2").arg(model.lastUsed).arg(model.securityTypeString);
+            return model.lastUsed;
+        case NM.NetworkModelItem.Activated:
+            return qsTr("Connected");
+        default:
+            break;
         }
+
+        return "";
     }
 
-    icon.source: FluidControls.Utils.iconUrl(materialIconName(ConnectionIcon))
-    text: ItemUniqueName
-    subText: {
-        if (ConnectionState === NM.Enums.Activating) {
-            if (Type === NM.Enums.Vpn)
-                return VpnState;
+    onClicked: {
+        if (model.connectionState === NM.NetworkModelItem.Deactivated) {
+            if (!model.uuid && model.type === NM.NetworkModelItem.Wireless &&
+                (model.securityType === NM.NetworkModelItem.StaticWep ||
+                 model.securityType === NM.NetworkModelItem.WpaPsk ||
+                 model.securityType === NM.NetworkModelItem.Wpa2Psk))
+                passwordDialog.open();
+            else if (model.uuid)
+                networking.activateConnection(model.connectionPath, model.devicePath, model.specificPath);
             else
-                return DeviceState;
-        } else if (ConnectionState === NM.Enums.Deactivating) {
-            if (Type === NM.Enums.Vpn)
-                return VpnState;
-            else
-                return DeviceState;
-        } else if (ConnectionState === NM.Enums.Deactivated) {
-            var result = LastUsed;
-            if (SecurityType > NM.Enums.None)
-                result += ", " + SecurityTypeString;
-            return result;
-        } else if (ConnectionState === NM.Enums.Activated) {
-            return qsTr("Connected");
+                networking.addAndActivateConnection(model.devicePath, model.specificPath);
+        } else {
+            networking.deactivateConnection(model.connectionPath, model.devicePath);
         }
     }
 
@@ -110,7 +105,7 @@ FluidControls.ListItem {
         }
 
         onOpened: passwordField.text = ""
-        onAccepted: handler.addAndActivateConnection(DevicePath, SpecificPath, passwordField.text)
+        onAccepted: networking.addAndActivateConnection(model.devicePath, model.specificPath, passwordField.text)
 
         implicitWidth: 400
 
@@ -128,13 +123,12 @@ FluidControls.ListItem {
                 placeholderText: qsTr("Password")
                 validator: RegExpValidator {
                     regExp: {
-                        if (SecurityType === NM.Enums.StaticWep)
-                            return /^(?:[\x20-\x7F]{5}|[0-9a-fA-F]{10}|[\x20-\x7F]{13}|[0-9a-fA-F]{26}){1}$/
-                        else
-                            return /^(?:[\x20-\x7F]{8,64}){1}$/
+                        if (model.securityType === NM.NetworkModelItem.StaticWep)
+                            return /^(?:[\x20-\x7F]{5}|[0-9a-fA-F]{10}|[\x20-\x7F]{13}|[0-9a-fA-F]{26}){1}$/;
+                        return /^(?:[\x20-\x7F]{8,64}){1}$/;
                     }
                 }
-                onAccepted: passwordDialog.accepted()
+                onAccepted: passwordDialog.accept()
 
                 Layout.fillWidth: true
             }

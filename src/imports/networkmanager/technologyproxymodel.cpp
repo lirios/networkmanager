@@ -59,7 +59,6 @@ static NetworkManager::ConnectionSettings::ConnectionType convertType(Technology
 
 TechnologyProxyModel::TechnologyProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
-    , m_type(Type::UnknownType)
 {
     setDynamicSortFilter(true);
     setSortCaseSensitivity(Qt::CaseInsensitive);
@@ -85,6 +84,20 @@ void TechnologyProxyModel::setType(Type type)
         setFilterRole(NetworkModel::TypeRole);
 }
 
+bool TechnologyProxyModel::showInactiveConnections() const
+{
+    return m_showInactiveConnections;
+}
+
+void TechnologyProxyModel::setShowInactiveConnections(bool value)
+{
+    if (m_showInactiveConnections == value)
+        return;
+
+    m_showInactiveConnections = value;
+    Q_EMIT showInactiveConnectionsChanged();
+}
+
 bool TechnologyProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
@@ -108,13 +121,15 @@ bool TechnologyProxyModel::filterAcceptsRow(int source_row, const QModelIndex &s
     }
 
     // Filter-out access points
-    switch (itemType) {
-    case NetworkModelItem::AvailableAccessPoint:
-    case NetworkModelItem::AvailableNsp:
+    if (itemType != NetworkModelItem::AvailableConnection &&
+            itemType != NetworkModelItem::AvailableAccessPoint)
         return false;
-    default:
-        break;
-    }
+
+    // Filter by state
+    const NetworkManager::ActiveConnection::State state =
+            static_cast<NetworkManager::ActiveConnection::State>(sourceModel()->data(index, NetworkModel::ConnectionStateRole).toUInt());
+    if (!m_showInactiveConnections && state == NetworkManager::ActiveConnection::Deactivated)
+        return false;
 
     // Filter on connection name
     const QString pattern = filterRegExp().pattern();
@@ -125,12 +140,5 @@ bool TechnologyProxyModel::filterAcceptsRow(int source_row, const QModelIndex &s
         return data.contains(pattern, Qt::CaseInsensitive);
     }
 
-    return true;
-}
-
-bool TechnologyProxyModel::lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const
-{
-    Q_UNUSED(source_left);
-    Q_UNUSED(source_right);
     return true;
 }

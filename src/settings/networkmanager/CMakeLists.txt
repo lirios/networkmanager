@@ -7,9 +7,16 @@ liri_add_settings_module(NetworkManager
         contents/MultiLineItem.qml
         contents/PasswordListItem.qml
         contents/SecurityMD5.qml
-        contents/SecurityPage.qml
         contents/SecurityTLS.qml
         contents/WiredIdentityPage.qml
         contents/WiredPage.qml
+        contents/WiredDetailsPage.qml
+        contents/WiredSecurityPage.qml
+        contents/WirelessIdentityPage.qml
         contents/WirelessPage.qml
+        contents/WirelessDetailsPage.qml
+        contents/WirelessSecurityPage.qml
+        contents/SecurityWepHex.qml
+        contents/SecurityWepPassphrase.qml
+        contents/SecurityWpaPsk.qml
 )

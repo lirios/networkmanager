@@ -33,64 +33,93 @@ FluidControls.TabbedPage {
 
     property var model
 
-    title: model.Name
+    title: model.name
 
-    data: [
-        NM.WiredSettings {
-            id: wiredSettings
-            path: model.ConnectionPath
+    actions: [
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("content/save")
+            toolTip: qsTr("Save this connection")
+            onTriggered: {
+                identityPage.updateSettings();
+                ipV4Page.updateSettings();
+                ipV6Page.updateSettings();
+                //securityPage.updateSettings();
+
+                console.debug("Identity:", JSON.stringify(identityPage.settingsMap));
+                networkSettings.saveSettings(model.connectionPath, "connection", identityPage.settingsMap["connection"]);
+                networkSettings.saveSettings(model.connectionPath, "802-3-ethernet", identityPage.settingsMap["802-3-ethernet"]);
+
+                console.debug("IPv4:", JSON.stringify(ipV4Page.settingsMap));
+                networkSettings.saveSettings(model.connectionPath, "ipv4", ipV4Page.settingsMap);
+
+                console.debug("IPv6:", JSON.stringify(ipV6Page.settingsMap));
+                networkSettings.saveSettings(model.connectionPath, "ipv6", ipV6Page.settingsMap);
+
+                //console.debug("Security:", JSON.stringify(securityPage.settingsMap));
+                //networkSettings.saveSettings(model.connectionPath, "802-1x", securityPage.settingsMap);
+            }
         }
     ]
 
-    FluidControls.Tab {
-        title: qsTr("Wired")
+    Component.onCompleted: {
+        identityPage.settingsMap = {
+            "connection": {},
+            "802-3-ethernet": {},
+        };
+        Object.keys(identityPage.settingsMap).forEach(function(key) {
+            identityPage.settingsMap[key] = networkSettings.getSettings(model.connectionPath, key);
+        });
+        console.debug("Identity:", JSON.stringify(identityPage.settingsMap));
+        identityPage.loadSettings();
 
-        WiredIdentityPage {}
+        ipV4Page.settingsMap = networkSettings.getSettings(model.connectionPath, "ipv4");
+        console.debug("IPv4:", JSON.stringify(ipV4Page.settingsMap));
+        ipV4Page.loadSettings();
+
+        ipV6Page.settingsMap = networkSettings.getSettings(model.connectionPath, "ipv6");
+        console.debug("IPv6:", JSON.stringify(ipV6Page.settingsMap));
+        ipV6Page.loadSettings();
+
+        //securityPage.settingsMap = networkSettings.getSettings(model.connectionPath, "802-1x");
+        //console.warn("Security:", JSON.stringify(securityPage.settingsMap));
+        //securityPage.loadSettings();
     }
 
     FluidControls.Tab {
-        title: qsTr("802.1x Security")
+        title: qsTr("Details")
 
-        SecurityPage {
-            eapMethods: ListModel {
-                ListElement {
-                    type: "MD5"
-                    //: Security method
-                    label: QT_TR_NOOP("MD5")
-                }
-                ListElement {
-                    type: "TLS"
-                    //: Security method
-                    label: QT_TR_NOOP("TLS")
-                }
-                ListElement {
-                    type: "FAST"
-                    //: Security method
-                    label: QT_TR_NOOP("FAST")
-                }
-                ListElement {
-                    type: "TTLS"
-                    //: Security method
-                    label: QT_TR_NOOP("Tunneled TLS")
-                }
-                ListElement {
-                    type: "PEAP"
-                    //: Security method
-                    label: QT_TR_NOOP("Protected EAP (PEAP)")
-                }
-            }
+        WiredDetailsPage {}
+    }
+
+    FluidControls.Tab {
+        title: qsTr("Identity")
+
+        WiredIdentityPage {
+            id: identityPage
         }
     }
 
     FluidControls.Tab {
         title: qsTr("IPv4")
 
-        IPAddressPage {}
+        IPAddressPage {
+            id: ipV4Page
+        }
     }
 
     FluidControls.Tab {
         title: qsTr("IPv6")
 
-        IPAddressPage {}
+        IPAddressPage {
+            id: ipV6Page
+        }
+    }
+
+    FluidControls.Tab {
+        title: qsTr("Security")
+
+        WiredSecurityPage {
+            id: securityPage
+        }
     }
 }

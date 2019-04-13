@@ -24,129 +24,102 @@
 import QtQuick 2.1
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
+import Liri.NetworkManager 1.0 as NM
 import Fluid.Controls 1.0 as FluidControls
 
-Item {
-    property var wirelessModel
-
+FluidControls.TabbedPage {
     id: wirelessPage
 
-    property var __syspal: SystemPalette {
-        colorGroup: SystemPalette.Active
+    property var model
+
+    title: model.name
+
+    actions: [
+        FluidControls.Action {
+            icon.source: FluidControls.Utils.iconUrl("content/save")
+            toolTip: qsTr("Save this connection")
+            onTriggered: {
+                identityPage.updateSettings();
+                ipV4Page.updateSettings();
+                ipV6Page.updateSettings();
+                securityPage.updateSettings();
+
+                console.debug("Identity:", JSON.stringify(identityPage.settingsMap));
+                networkSettings.saveSettings(model.connectionPath, "connection", identityPage.settingsMap["connection"]);
+                networkSettings.saveSettings(model.connectionPath, "802-11-wireless", identityPage.settingsMap["802-11-wireless"]);
+
+                console.debug("IPv4:", JSON.stringify(ipV4Page.settingsMap));
+                networkSettings.saveSettings(model.connectionPath, "ipv4", ipV4Page.settingsMap);
+
+                console.debug("IPv6:", JSON.stringify(ipV6Page.settingsMap));
+                networkSettings.saveSettings(model.connectionPath, "ipv6", ipV6Page.settingsMap);
+
+                console.debug("Security:", JSON.stringify(securityPage.settingsMap));
+                networkSettings.saveSettings(model.connectionPath, "802-11-wireless-security", securityPage.settingsMap);
+            }
+        }
+    ]
+
+    Component.onCompleted: {
+        identityPage.settingsMap = {
+            "connection": {},
+            "802-11-wireless": {},
+        };
+        Object.keys(identityPage.settingsMap).forEach(function(key) {
+            identityPage.settingsMap[key] = networkSettings.getSettings(model.connectionPath, key);
+        });
+        console.debug("Identity:", JSON.stringify(identityPage.settingsMap));
+        identityPage.loadSettings();
+
+        ipV4Page.settingsMap = networkSettings.getSettings(model.connectionPath, "ipv4");
+        console.debug("IPv4:", JSON.stringify(ipV4Page.settingsMap));
+        ipV4Page.loadSettings();
+
+        ipV6Page.settingsMap = networkSettings.getSettings(model.connectionPath, "ipv6");
+        console.debug("IPv6:", JSON.stringify(ipV6Page.settingsMap));
+        ipV6Page.loadSettings();
+
+        securityPage.settingsMap = networkSettings.getSettings(model.connectionPath, "802-11-wireless-security");
+        console.debug("Security:", JSON.stringify(securityPage.settingsMap));
+        securityPage.loadSettings();
     }
 
-    ColumnLayout {
-        anchors.fill: parent
 
-        RowLayout {
-            FluidControls.Icon {
-                name: wirelessModel.available ? "network-wireless" : "network-wireless-disconnected"
-                width: Units.iconSizes.smallMedium
-                height: width
-            }
+    FluidControls.Tab {
+        title: qsTr("Details")
 
-            ColumnLayout {
-                Label {
-                    text: qsTr("Wireless")
-                    font.bold: true
-                }
+        WirelessDetailsPage {}
+    }
 
-                Label {
-                    text: {
-                        if (wirelessModel.powered)
-                            return wirelessModel.connected ? qsTr("Connected") : qsTr("Disconnected");
-                        return qsTr("Unavailable");
-                    }
-                }
-            }
+    FluidControls.Tab {
+        title: qsTr("Identity")
 
-            Item {
-                Layout.fillWidth: true
-            }
-
-            Button {
-                text: qsTr("Rescan")
-                enabled: wirelessModel.powered
-                onClicked: wirelessModel.requestScan()
-            }
-
-            CheckBox {
-                text: qsTr("Enable")
-                checked: wirelessModel.powered
-                onClicked: wirelessModel.powered = !wirelessModel.powered
-            }
-
-            Layout.fillWidth: true
+        WirelessIdentityPage {
+            id: identityPage
         }
+    }
 
-        ListView {
-            id: servicesList
-            model: wirelessModel
-            clip: true
-            delegate: FluidControls.ListItem {
-                text: model.networkService.name
+    FluidControls.Tab {
+        title: qsTr("IPv4")
 
-                RowLayout {
-                    ToolButton {
-                        FluidControls.Icon {
-                            name: "emblem-system-symbolic"
-                            width: Units.iconSizes.small
-                            height: width
-                            color:__syspal.text
-                        }
-                    }
-
-                    FluidControls.Icon {
-                        name: "network-wireless-encrypted-symbolic"
-                        width: Units.iconSizes.small
-                        height: width
-                        color: __syspal.text
-                        visible: !(model.networkService.security.length === 0 && model.networkService.security.contains("none"))
-                    }
-
-                    FluidControls.Icon {
-                        name: {
-                            if (model.networkService.strength > 80)
-                                return "network-wireless-signal-excellent-symbolic";
-                            if (model.networkService.strength > 55)
-                                return "network-wireless-signal-good-symbolic";
-                            if (model.networkService.strength > 30)
-                                return "network-wireless-signal-ok-symbolic";
-                            if (model.networkService.strength > 5)
-                                return "network-wireless-signal-weak-symbolic";
-                            return "network-wireless-signal-none-symbolic";
-                        }
-                        width: Units.iconSizes.small
-                        height: width
-                        color: __syspal.text
-                    }
-                }
-            }
+        IPAddressPage {
+            id: ipV4Page
         }
+    }
 
-        Item {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+    FluidControls.Tab {
+        title: qsTr("IPv6")
+
+        IPAddressPage {
+            id: ipV6Page
         }
+    }
 
-        RowLayout {
-            Button {
-                text: qsTr("Use as Hotspot...")
-                enabled: wirelessModel.connected
-            }
+    FluidControls.Tab {
+        title: qsTr("Security")
 
-            Button {
-                text: qsTr("Connect to Hidden Network...")
-                onClicked: {
-                    var component = Qt.createComponent(Qt.resolvedUrl("HiddenWifiDialog.qml"));
-                    var dialog = component.createObject(wirelessPage);
-                    dialog.visible = true;
-                }
-            }
-
-            Button {
-                text: qsTr("History")
-            }
+        WirelessSecurityPage {
+            id: securityPage
         }
     }
 }

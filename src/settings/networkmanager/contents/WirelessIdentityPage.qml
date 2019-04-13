@@ -74,17 +74,23 @@ ModulePage {
                 width: page.width
 
                 FluidControls.ListItem {
-                    text: qsTr("Link Speed")
-                    secondaryItem: SpinBox {
-                        id: speedField
+                    text: qsTr("SSID")
+                    secondaryItem: TextField {
+                        id: ssidField
                         anchors.verticalCenter: parent.verticalCenter
                         width: parent.width
-                        from: 0
-                        textFromValue: function(value, locale) {
-                            if (value === 0)
-                                return qsTr("Automatic");
-                            return Number(value).toLocaleString(locale, 'f', 0);
-                        }
+                        placeholderText: qsTr("SSID")
+                    }
+                }
+
+                FluidControls.ListItem {
+                    text: qsTr("BSSID")
+                    secondaryItem: TextField {
+                        id: bssidField
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: parent.width
+                        placeholderText: qsTr("BSSID")
+                        inputMask: "HH:HH:HH:HH:HH:HH;_"
                     }
                 }
 
@@ -109,21 +115,6 @@ ModulePage {
                         inputMask: "HH:HH:HH:HH:HH:HH;_"
                     }
                 }
-
-                FluidControls.ListItem {
-                    text: qsTr("MTU")
-                    secondaryItem: SpinBox {
-                        id: mtuField
-                        anchors.verticalCenter: parent.verticalCenter
-                        width: parent.width
-                        from: 0
-                        textFromValue: function(value, locale) {
-                            if (value === 0)
-                                return qsTr("Automatic");
-                            return Number(value).toLocaleString(locale, 'f', 0);
-                        }
-                    }
-                }
             }
         }
     }
@@ -145,12 +136,14 @@ ModulePage {
             availableToOthersCheckBox.checked = true;
         }
 
-        macField.text = networkSettings.macAddressAsString(settingsMap["802-3-ethernet"]["mac-address"]) || "";
-        clonedMacField.text = networkSettings.macAddressAsString(settingsMap["802-3-ethernet"]["cloned-mac-address"]) || "";
+        ssidField.text = settingsMap["802-11-wireless"]["ssid"] || nameField.text;
+        bssidField.text = settingsMap["802-11-wireless"]["bssid"] || "";
+        macField.text = networkSettings.macAddressAsString(settingsMap["802-11-wireless"]["mac-address"]) || "";
+        clonedMacField.text = networkSettings.macAddressAsString(settingsMap["802-11-wireless"]["cloned-mac-address"]) || "";
     }
 
     function updateSettings() {
-        settingsMap = {"connection": {}, "802-3-ethernet": {}};
+        settingsMap = {"connection": {}, "802-11-wireless": {}};
 
         settingsMap["connection"]["id"] = nameField.text;
         settingsMap["connection"]["autoconnect"] = autoConnectCheckBox.checked;
@@ -160,7 +153,9 @@ ModulePage {
         else
             settingsMap["connection"]["permissions"] = [networkSettings.currentUserName];
 
-        settingsMap["802-3-ethernet"]["mac-address"] = networkSettings.macAddressFromString(macField.text);
-        settingsMap["802-3-ethernet"]["cloned-mac-address"] = networkSettings.macAddressFromString(clonedMacField.text);
+        settingsMap["802-11-wireless"]["ssid"] = ssidField.text;
+        settingsMap["802-11-wireless"]["bssid"] = bssidField.text;
+        settingsMap["802-11-wireless"]["mac-address"] = networkSettings.macAddressFromString(macField.text);
+        settingsMap["802-11-wireless"]["cloned-mac-address"] = networkSettings.macAddressFromString(clonedMacField.text);
     }
 }

@@ -25,24 +25,53 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
 import Fluid.Controls 1.0 as FluidControls
+import Liri.NetworkManager 1.0 as NM
 
 FluidControls.ListItem {
+    id: passwordListItem
+
     property alias password: passwordField.text
     property alias placeholderText: passwordField.placeholderText
+    property alias validator: passwordField.validator
+    property alias maximumLength: passwordField.maximumLength
+    readonly property int secretFlagType: {
+        switch (secretFlagCombo.currentIndex) {
+        case 0:
+            return NM.NetworkSettings.AgentOwned;
+        case 1:
+            return NM.NetworkSettings.None;
+        case 2:
+            return NM.NetworkSettings.NotSaved;
+        }
+    }
+
+    signal accepted()
 
     secondaryItem: Column {
-        Layout.fillWidth: true
+        anchors.verticalCenter: parent.verticalCenter
+        width: passwordListItem.width
 
         TextField {
             id: passwordField
             width: parent.width
             placeholderText: qsTr("Password")
             echoMode: showPasswordCheckBox.checked ? TextInput.Normal : TextInput.Password
+            onAccepted: passwordListItem.accepted()
         }
 
         CheckBox {
             id: showPasswordCheckBox
             text: qsTr("Show password")
+        }
+
+        ComboBox {
+            id: secretFlagCombo
+            width: parent.width
+            model: [
+                qsTr("Store the password only for this user"),
+                qsTr("Store the password for all users"),
+                qsTr("Ask for this password every time")
+            ]
         }
     }
 }

@@ -21,19 +21,15 @@
  * $END_LICENSE$
  ***************************************************************************/
 
-#include <QtQml/QtQml>
+#include <QtQml>
 
-#include "availabledevices.h"
 #include "appletproxymodel.h"
 #include "connectionicon.h"
-#include "connectionmodel.h"
-#include "enabledconnections.h"
-#include "enums.h"
-#include "handler.h"
+#include "networking.h"
 #include "networkmodel.h"
-#include "networkstatus.h"
+#include "networkmodelitem.h"
+#include "networksettings.h"
 #include "technologyproxymodel.h"
-#include "wiredsettings.h"
 
 class NetworkManagerPlugin : public QQmlExtensionPlugin
 {
@@ -45,22 +41,14 @@ public:
         // @uri Liri.NetworkManager
         Q_ASSERT(QLatin1String(uri) == QLatin1String("Liri.NetworkManager"));
 
-        qmlRegisterType<AvailableDevices>(uri, 1, 0, "AvailableDevices");
-        qmlRegisterType<ConnectionIcon>(uri, 1, 0, "ConnectionIcon");
-        qmlRegisterType<ConnectionModel>(uri, 1, 0, "ConnectionModel");
-        qmlRegisterType<EnabledConnections>(uri, 1, 0, "EnabledConnections");
-        qmlRegisterUncreatableType<Enums>(uri, 1, 0, "Enums",
-                                          QLatin1String("Cannot instantiate Enums"));
-        qmlRegisterType<NetworkStatus>(uri, 1, 0, "NetworkStatus");
-        qmlRegisterType<Handler>(uri, 1, 0, "Handler");
-        qmlRegisterType<NetworkModel>(uri, 1, 0, "NetworkModel");
+        qmlRegisterUncreatableType<NetworkModelItem>(uri, 1, 0, "NetworkModelItem",
+                                                     QLatin1String("Cannot instantiate NetworkModelItem"));
         qmlRegisterType<AppletProxyModel>(uri, 1, 0, "AppletProxyModel");
+        qmlRegisterType<ConnectionIcon>(uri, 1, 0, "ConnectionIcon");
+        qmlRegisterType<Networking>(uri, 1, 0, "Networking");
+        qmlRegisterType<NetworkModel>(uri, 1, 0, "NetworkModel");
+        qmlRegisterType<NetworkSettings>(uri, 1, 0, "NetworkSettings");
         qmlRegisterType<TechnologyProxyModel>(uri, 1, 0, "TechnologyProxyModel");
-
-        // Settings
-        qmlRegisterUncreatableType<Security8021xSettings>(uri, 1, 0, "Security8021xSettings", tr("Cannot instantiate Security8021xSettings"));
-        qmlRegisterUncreatableType<IPv4Settings>(uri, 1, 0, "IPv4Settings", tr("Cannot instantiate IPv4Settings"));
-        qmlRegisterType<WiredSettings>(uri, 1, 0, "WiredSettings");
     }
 };
 

@@ -1,7 +1,7 @@
 /****************************************************************************
  * This file is part of Liri.
  *
- * Copyright (C) 2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+ * Copyright (C) 2019 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
  * $BEGIN_LICENSE:GPL3+$
  *
@@ -22,28 +22,30 @@
  ***************************************************************************/
 
 import QtQuick 2.0
-import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
 import Fluid.Controls 1.0 as FluidControls
+import Liri.Settings 1.0
+import Liri.NetworkManager 1.0 as NM
 
-FluidControls.ListItem {
-    id: listItem
-    readonly property alias airplaneMode: __priv.airplaneMode
+ModuleContainer {
+    title: qsTr("WPA && WPA2 Personal")
 
-    onClicked: __priv.airplaneMode = !__priv.airplaneMode
-
-    QtObject {
-        id: __priv
-
-        property bool airplaneMode: false
+    PasswordListItem {
+        id: passwordField
+        width: parent.width
     }
 
-    icon.source: FluidControls.Utils.iconUrl("device/airplanemode_active")
-    text: qsTr("Airplane mode")
+    function loadSettings() {
+        passwordField.text = page.settingsMap["psk"];
 
-    rightItem: Switch {
-        anchors.centerIn: parent
+        if (page.settingsMap["psk-flags"] & NM.NetworkSettings.None)
+            passwordField.setSecretFlagType(NM.NetworkSettings.None);
+        else if (page.settingsMap["psk-flags"] & NM.NetworkSettings.AgentOwned)
+            passwordField.setSecretFlagType(NM.NetworkSettings.AgentOwned);
+    }
 
-        onClicked: listItem.clicked()
+    function updateSettings() {
+        page.settingsMap["psk"] = passwordField.text;
+        page.settingsMap["psk-flags"] = passwordField.secretFlagType;
     }
 }

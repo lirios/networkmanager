@@ -1,6 +1,5 @@
 liri_add_indicator(NetworkManager
     QML_FILES
-        contents/AirplaneMode.qml
-        contents/ConnectionItem.qml
+        contents/Connection.qml
         contents/main.qml
 )

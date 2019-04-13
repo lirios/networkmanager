@@ -21,7 +21,8 @@
  * $END_LICENSE$
  ***************************************************************************/
 
-#pragma once
+#ifndef TECHNOLOGYPROXYMODEL_H
+#define TECHNOLOGYPROXYMODEL_H
 
 #include <QtCore/QSortFilterProxyModel>
 
@@ -31,6 +32,7 @@ class TechnologyProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(Type type READ type WRITE setType NOTIFY typeChanged)
+    Q_PROPERTY(bool showInactiveConnections READ showInactiveConnections WRITE setShowInactiveConnections NOTIFY showInactiveConnectionsChanged)
     Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel)
 public:
     enum Type {
@@ -53,13 +55,19 @@ public:
     Type type() const;
     void setType(Type type);
 
+    bool showInactiveConnections() const;
+    void setShowInactiveConnections(bool value);
+
 Q_SIGNALS:
     void typeChanged();
+    void showInactiveConnectionsChanged();
 
 protected:
     bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
-    bool lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const override;
 
 private:
-    Type m_type;
+    Type m_type = UnknownType;
+    bool m_showInactiveConnections = false;
 };
+
+#endif //TECHNOLOGYPROXYMODEL_H

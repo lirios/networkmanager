@@ -1,5 +1,6 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright (C) 2019 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+    Copyright 2013-2018 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -22,33 +23,35 @@
 #define PLASMA_NM_NETWORK_MODEL_H
 
 #include <QAbstractListModel>
-
-#include "networkitemslist.h"
+#include <QLoggingCategory>
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessDevice>
-#if !NM_CHECK_VERSION(1, 2, 0)
-#include <NetworkManagerQt/WimaxDevice>
-#endif
 #include <NetworkManagerQt/Utils>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modem.h>
 #endif
 
+#include "networkitemslist.h"
+
+Q_DECLARE_LOGGING_CATEGORY(gLcNm)
+
 class Q_DECL_EXPORT NetworkModel : public QAbstractListModel
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit NetworkModel(QObject* parent = 0);
-    virtual ~NetworkModel();
+    explicit NetworkModel(QObject *parent = nullptr);
+    ~NetworkModel() override;
 
     enum ItemRole {
-        ConnectionDetailsRole = Qt::UserRole + 1,
+        NetworkItemRole = Qt::UserRole + 1,
+        ConnectionDetailsRole,
         ConnectionIconRole,
         ConnectionPathRole,
         ConnectionStateRole,
+        ConnectionStateStringRole,
         DeviceName,
         DevicePathRole,
         DeviceStateRole,
@@ -58,11 +61,17 @@ public:
         LastUsedRole,
         LastUsedDateOnlyRole,
         NameRole,
-        NspRole,
         SecurityTypeRole,
         SecurityTypeStringRole,
         SectionRole,
         SignalRole,
+        SignalStrengthRole,
+        LinkSpeedRole,
+        IPv4AddressRole,
+        IPv6AddressRole,
+        GatewayRole,
+        NameServerRole,
+        MacAddressRole,
         SlaveRole,
         SsidRole,
         SpecificPathRole,
@@ -71,28 +80,32 @@ public:
         UniRole,
         UuidRole,
         VpnState,
+        VpnType,
+        RxBytesRole,
+        TxBytesRole
     };
 
-    int rowCount(const QModelIndex& parent) const override;
-    QVariant data(const QModelIndex& index, int role) const override;
-    virtual QHash< int, QByteArray > roleNames() const override;
+    int rowCount(const QModelIndex &parent) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
 public Q_SLOTS:
     void onItemUpdated();
+    void setDeviceStatisticsRefreshRateMs(const QString &devicePath, uint refreshRate);
 
 private Q_SLOTS:
     void accessPointSignalStrengthChanged(int signal);
-    void activeConnectionAdded(const QString& activeConnection);
-    void activeConnectionRemoved(const QString& activeConnection);
+    void activeConnectionAdded(const QString &activeConnection);
+    void activeConnectionRemoved(const QString &activeConnection);
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void activeVpnConnectionStateChanged(NetworkManager::VpnConnection::State state,NetworkManager::VpnConnection::StateChangeReason reason);
-    void availableConnectionAppeared(const QString& connection);
-    void availableConnectionDisappeared(const QString& connection);
-    void connectionAdded(const QString& connection);
-    void connectionRemoved(const QString& connection);
+    void availableConnectionAppeared(const QString &connection);
+    void availableConnectionDisappeared(const QString &connection);
+    void connectionAdded(const QString &connection);
+    void connectionRemoved(const QString &connection);
     void connectionUpdated();
-    void deviceAdded(const QString& device);
-    void deviceRemoved(const QString& device);
+    void deviceAdded(const QString &device);
+    void deviceRemoved(const QString &device);
     void deviceStateChanged(NetworkManager::Device::State state, NetworkManager::Device::State oldState, NetworkManager::Device::StateChangeReason reason);
 #if WITH_MODEMMANAGER_SUPPORT
     void gsmNetworkAccessTechnologiesChanged(QFlags<MMModemAccessTechnology> accessTechnologies);
@@ -102,42 +115,28 @@ private Q_SLOTS:
     void ipConfigChanged();
     void ipInterfaceChanged();
     void statusChanged(NetworkManager::Status status);
-#if !NM_CHECK_VERSION(1, 2, 0)
-    void wimaxNspAppeared(const QString& nsp);
-    void wimaxNspDisappeared(const QString& nsp);
-    void wimaxNspSignalChanged(uint signal);
-#endif
-    void wirelessNetworkAppeared(const QString& ssid);
-    void wirelessNetworkDisappeared(const QString& ssid);
+    void wirelessNetworkAppeared(const QString &ssid);
+    void wirelessNetworkDisappeared(const QString &ssid);
     void wirelessNetworkSignalChanged(int signal);
-    void wirelessNetworkReferenceApChanged(const QString& accessPoint);
+    void wirelessNetworkReferenceApChanged(const QString &accessPoint);
 
     void initialize();
 private:
     NetworkItemsList m_list;
 
-    void addActiveConnection(const NetworkManager::ActiveConnection::Ptr& activeConnection);
-    void addAvailableConnection(const QString& connection, const NetworkManager::Device::Ptr& device);
-    void addConnection(const NetworkManager::Connection::Ptr& connection);
-    void addDevice(const NetworkManager::Device::Ptr& device);
-#if !NM_CHECK_VERSION(1, 2, 0)
-    void addWimaxNsp(const NetworkManager::WimaxNsp::Ptr& nsp, const NetworkManager::WimaxDevice::Ptr& device);
-#endif
-    void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr& network, const NetworkManager::WirelessDevice::Ptr& device);
-    void checkAndCreateDuplicate(const QString& connection, const NetworkManager::Device::Ptr& device);
+    void addActiveConnection(const NetworkManager::ActiveConnection::Ptr &activeConnection);
+    void addAvailableConnection(const QString &connection, const NetworkManager::Device::Ptr &device);
+    void addConnection(const NetworkManager::Connection::Ptr &connection);
+    void addDevice(const NetworkManager::Device::Ptr &device);
+    void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::WirelessDevice::Ptr &device);
+    void checkAndCreateDuplicate(const QString &connection, const QString &deviceUni);
     void initializeSignals();
-    void initializeSignals(const NetworkManager::ActiveConnection::Ptr& activeConnection);
-    void initializeSignals(const NetworkManager::Connection::Ptr& connection);
-    void initializeSignals(const NetworkManager::Device::Ptr& device);
-#if !NM_CHECK_VERSION(1, 2, 0)
-    void initializeSignals(const NetworkManager::WimaxNsp::Ptr& nsp);
-#endif
-    void initializeSignals(const NetworkManager::WirelessNetwork::Ptr& network);
-    void updateItem(NetworkModelItem * item);
-#if !NM_CHECK_VERSION(1, 2, 0)
-    void updateFromWimaxNsp(NetworkModelItem * item, const NetworkManager::WimaxNsp::Ptr& nsp);
-#endif
-    void updateFromWirelessNetwork(NetworkModelItem * item, const NetworkManager::WirelessNetwork::Ptr& network);
+    void initializeSignals(const NetworkManager::ActiveConnection::Ptr &activeConnection);
+    void initializeSignals(const NetworkManager::Connection::Ptr &connection);
+    void initializeSignals(const NetworkManager::Device::Ptr &device);
+    void initializeSignals(const NetworkManager::WirelessNetwork::Ptr &network);
+    void updateItem(NetworkModelItem *item);
+    void updateFromWirelessNetwork(NetworkModelItem *item, const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::WirelessDevice::Ptr &device);
 
     NetworkManager::WirelessSecurityType alternativeWirelessSecurity(const NetworkManager::WirelessSecurityType type);
 };

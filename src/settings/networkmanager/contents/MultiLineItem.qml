@@ -32,7 +32,6 @@ Repeater {
 
     FluidControls.ListItem {
         id: listItem
-        //text: qsTr("DNS")
         secondaryItem: IPAddressField {
             Layout.alignment: Qt.AlignVCenter
             Layout.fillWidth: true

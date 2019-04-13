@@ -32,15 +32,20 @@ Indicator {
     id: indicator
 
     title: qsTr("Network")
-    iconSource: FluidControls.Utils.iconUrl(materialIconName(connectionIconProvider.connectionTooltipIcon))
-    tooltip: networkStatus.activeConnections
-    // visible: connectionIconProvider.connectionIcon !== "network-unavailable"
+    iconSource: FluidControls.Utils.iconUrl(connectionIconProvider.connectionTooltipIcon)
+    tooltip: networking.activeConnections
+    visible: networking.enabled
 
     component: ColumnLayout {
         spacing: 0
 
-        AirplaneMode {
-            onClicked: handler.enableAirplaneMode(airplaneMode)
+        FluidControls.ListItem {
+            text: qsTr("Use Wi-Fi")
+            rightItem: Switch {
+                id: wirelessSwitch
+                anchors.verticalCenter: parent.verticalCenter
+                onCheckedChanged: networking.wirelessEnabled = checked
+            }
         }
 
         ListView {
@@ -49,10 +54,10 @@ Indicator {
             }
             clip: true
             currentIndex: -1
-            section.property: "Section"
+            section.property: "section"
             section.delegate: FluidControls.Subheader { text: section }
 
-            delegate: ConnectionItem {}
+            delegate: Connection {}
 
             ScrollBar.horizontal: ScrollBar {}
             ScrollBar.vertical: ScrollBar {}
@@ -62,50 +67,15 @@ Indicator {
         }
     }
 
+    NM.Networking {
+        id: networking
+    }
+
     NM.ConnectionIcon {
         id: connectionIconProvider
     }
 
-    NM.NetworkStatus {
-        id: networkStatus
-    }
-
-    NM.Handler {
-        id: handler
-    }
-
-    function materialIconName(iconName) {
-        if (icons[iconName]) {
-            return icons[iconName]
-        } else {
-            console.error("Icon not mapped: " + iconName)
-        }
-    }
-
-    readonly property var icons: {
-        "": "device/signal_wifi_0_bar",
-        "network-wireless-100-locked": "device/signal_wifi_4_bar_lock",
-        "network-wireless-80-locked": "device/signal_wifi_3_bar_lock",
-        "network-wireless-60-locked": "device/signal_wifi_2_bar_lock",
-        "network-wireless-40-locked": "device/signal_wifi_2_bar_lock",
-        "network-wireless-20-locked": "device/signal_wifi_1_bar_lock",
-        "network-wireless-0-locked": "device/signal_wifi_0_bar_lock",
-        "network-wireless-connected-100": "device/signal_wifi_4_bar",
-        "network-wireless-connected-80": "device/signal_wifi_3_bar",
-        "network-wireless-connected-60": "device/signal_wifi_2_bar",
-        "network-wireless-connected-40": "device/signal_wifi_2_bar",
-        "network-wireless-connected-20": "device/signal_wifi_1_bar",
-        "network-wireless-connected-0": "device/signal_wifi_0_bar",
-        "network-wireless-100": "device/signal_wifi_4_bar",
-        "network-wireless-60": "device/signal_wifi_2_bar",
-        "network-wireless-40": "device/signal_wifi_2_bar",
-        "network-wireless-80": "device/signal_wifi_3_bar",
-        "network-wireless-20": "device/signal_wifi_1_bar",
-        "network-wireless-0": "device/signal_wifi_0_bar",
-        "network-wired-activated": "action/settings_ethernet",
-        "network-wired": "action/settings_ethernet",
-        "network-vpn": "action/lock",
-        "network-bluetooth": "device/bluetooth",
-        "network-unavailable": "device/signal_wifi_off",
+    Component.onCompleted: {
+        wirelessSwitch.checked = networking.wirelessEnabled;
     }
 }
