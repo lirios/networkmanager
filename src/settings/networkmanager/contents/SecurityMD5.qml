@@ -1,7 +1,7 @@
 /****************************************************************************
  * This file is part of Settings.
  *
- * Copyright (C) 2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+ * Copyright (C) 2019 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
  * $BEGIN_LICENSE:GPL3+$
  *
@@ -24,21 +24,28 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
 import Fluid.Controls 1.0 as FluidControls
+import Liri.Settings 1.0
+import Liri.NetworkManager 1.0 as NM
 
-Column {
-    FluidControls.ListItem {
-        enabled: enabledSwitch.checked
-        visible: securityType.currentIndex == 0
-        secondaryItem: TextField {
-            id: userNameField
-            anchors.verticalCenter: parent.verticalCenter
-            width: parent.width
-            placeholderText: qsTr("User name")
-        }
-    }
+ModuleContainer {
+    title: qsTr("WPA && WPA2 Personal")
 
     PasswordListItem {
-        enabled: enabledSwitch.checked
-        visible: securityType.currentIndex == 0
+        id: passwordField
+        width: parent.width
+    }
+
+    function loadSettings() {
+        passwordField.text = page.settingsMap["psk"];
+
+        if (page.settingsMap["psk-flags"] & NM.NetworkSettings.None)
+            passwordField.setSecretFlagType(NM.NetworkSettings.None);
+        else if (page.settingsMap["psk-flags"] & NM.NetworkSettings.AgentOwned)
+            passwordField.setSecretFlagType(NM.NetworkSettings.AgentOwned);
+    }
+
+    function updateSettings() {
+        page.settingsMap["psk"] = passwordField.text;
+        page.settingsMap["psk-flags"] = passwordField.secretFlagType;
     }
 }
