@@ -32,6 +32,8 @@ import Liri.Settings 1.0
 ModulePage {
     id: networkPreflet
 
+    readonly property bool networkAvailable: connectionIconProvider.connectionIcon !== "network-unavailable"
+
     //property var profileDialog: ProfileDialog {}
 
     NM.ConnectionIcon {
@@ -59,9 +61,16 @@ ModulePage {
         WiredPage {}
     }
 
+    FluidControls.Placeholder {
+        anchors.centerIn: parent
+        icon.source: FluidControls.Utils.iconUrl("alert/warning")
+        text: qsTr("Please make sure the \"NetworkManager\" service is running.")
+        visible: !networkAvailable
+    }
+
     ModuleContainer {
         title: qsTr("Wired")
-        visible: wiredRepeater.count > 0
+        visible: networkAvailable && wiredRepeater.count > 0
 
         Repeater {
             id: wiredRepeater
@@ -82,7 +91,7 @@ ModulePage {
 
     ModuleContainer {
         title: qsTr("Wireless")
-        visible: wirelessRepeater.count > 0
+        visible: networkAvailable && wirelessRepeater.count > 0
 
         Repeater {
             id: wirelessRepeater
@@ -102,7 +111,7 @@ ModulePage {
 
     ModuleContainer {
         title: qsTr("Bluetooth")
-        visible: bluetoothRepeater.count > 0
+        visible: networkAvailable && bluetoothRepeater.count > 0
 
         Repeater {
             id: bluetoothRepeater
@@ -122,7 +131,7 @@ ModulePage {
 
     ModuleContainer {
         title: qsTr("Wimax")
-        visible: wimaxRepeater.count > 0
+        visible: networkAvailable && wimaxRepeater.count > 0
 
         Repeater {
             id: wimaxRepeater
@@ -142,7 +151,7 @@ ModulePage {
 
     ModuleContainer {
         title: qsTr("ADSL")
-        visible: adslRepeater.count > 0
+        visible: networkAvailable && adslRepeater.count > 0
 
         Repeater {
             id: adslRepeater
@@ -162,7 +171,7 @@ ModulePage {
 
     ModuleContainer {
         title: qsTr("VPN")
-        visible: vpnRepeater.count > 0
+        visible: networkAvailable && vpnRepeater.count > 0
 
         Repeater {
             id: vpnRepeater
@@ -179,107 +188,4 @@ ModulePage {
             }
         }
     }
-
-    /*
-    Component {
-        id: wiredComponent
-
-        WiredPage {}
-    }
-
-    Component {
-        id: wirelessComponent
-
-        WirelessPage {}
-    }
-
-    StackLayout {
-        anchors.fill: parent
-        currentIndex: connectionIconProvider.connectionIcon == "network-unavailable" ? 1 : 0
-
-        RowLayout {
-            ListView {
-                id: technologiesView
-                focus: true
-                model: NM.AppletProxyModel {}
-                section.property: "Section"
-                delegate: FluidControls.ListItem {
-                    readonly property string iconName: {
-                        if (modelData == "ethernet")
-                            return "network-wired" + (technology.connected ? "" : "-disconnected") + "-symbolic";
-                        else if (modelData == "wifi")
-                            return "network-wireless-signal-" + (technology.connected ? "excellent" : "none") + "-symbolic";
-                        return "network-vpn-symbolic";
-                    }
-
-                    icon.source: "image://fluidicontheme/" + iconName
-
-                    text: model.Name
-                    onClicked: {
-                        ListView.currentIndex = index;
-                        technologiesView.switchPage(model.Type, model);
-                    }
-                }
-                visible: connectionIconProvider.connectionIcon !== "network-unavailable"
-
-                ScrollBar.vertical: ScrollBar {}
-                Layout.fillHeight: true
-                Layout.preferredWidth: FluidControls.Units.gu(12)
-
-                Component.onCompleted: {
-                    if (visible)
-                        switchPage(model[currentIndex])
-                }
-
-                function switchPage(type, model) {
-                    switch (type) {
-                    case NM.Enums.Wired:
-                        pageStack.push(wiredComponent, {"wiredModel": model});
-                        break;
-                    case NM.Enums.Wireless:
-                        pageStack.push(wirelessComponent, {"wirelessModel": model});
-                        break;
-                    default:
-                        break;
-                    }
-                }
-            }
-
-            StackView {
-                id: pageStack
-
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-            }
-
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-        }
-
-        ColumnLayout {
-            spacing: FluidControls.Units.largeSpacing
-
-            FluidControls.Icon {
-                name: "computer-fail"
-                width: FluidControls.Units.iconSizes.enormous
-                height: width
-            }
-
-            Label {
-                font.bold: true
-                text: qsTr("Network service unavailable");
-            }
-
-            Label {
-                text: qsTr("Please make sure the \"NetworkManager\" service is running.");
-            }
-
-            Item {
-                Layout.fillHeight: true
-            }
-
-            Layout.alignment: Qt.AlignHCenter
-        }
-    }
-    */
 }
