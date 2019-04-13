@@ -72,7 +72,7 @@ ModulePage {
             }
 
             FluidControls.ListItem {
-                icon.source: "image://fluidicontheme/" + model.symbolicIconName
+                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
 
                 text: model.ItemUniqueName
                 onClicked: window.pageStack.push(wiredPage, {"model": model})
@@ -93,7 +93,7 @@ ModulePage {
             }
 
             FluidControls.ListItem {
-                icon.source: "image://fluidicontheme/" + model.symbolicIconName
+                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
 
                 text: model.ItemUniqueName
             }
@@ -113,7 +113,7 @@ ModulePage {
             }
 
             FluidControls.ListItem {
-                icon.source: "image://fluidicontheme/" + model.symbolicIconName
+                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
 
                 text: model.ItemUniqueName
             }
@@ -133,7 +133,7 @@ ModulePage {
             }
 
             FluidControls.ListItem {
-                icon.source: "image://fluidicontheme/" + model.symbolicIconName
+                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
 
                 text: model.ItemUniqueName
             }
@@ -153,7 +153,7 @@ ModulePage {
             }
 
             FluidControls.ListItem {
-                icon.source: "image://fluidicontheme/" + model.symbolicIconName
+                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
 
                 text: model.ItemUniqueName
             }
@@ -173,7 +173,7 @@ ModulePage {
             }
 
             FluidControls.ListItem {
-                icon.source: "image://fluidicontheme/" + model.symbolicIconName
+                icon.source: FluidControls.Utils.iconUrl(model.symbolicIconName)
 
                 text: model.ItemUniqueName
             }
