@@ -1,43 +1,40 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" version="2.1">
 <context>
-    <name>AirplaneMode</name>
+    <name>Connection</name>
     <message>
-        <location filename="../contents/AirplaneMode.qml" line="42"/>
-        <source>Airplane mode</source>
-        <translation>Tryb Samolotowy</translation>
+        <location filename="../contents/Connection.qml" line="50"/>
+        <source>%1, %2</source>
+        <translation type="unfinished"/>
     </message>
-</context>
-<context>
-    <name>ConnectionItem</name>
     <message>
-        <location filename="../contents/ConnectionItem.qml" line="78"/>
+        <location filename="../contents/Connection.qml" line="53"/>
         <source>Connected</source>
-        <translation>Połączono</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/ConnectionItem.qml" line="88"/>
+        <location filename="../contents/Connection.qml" line="83"/>
         <source>Connect to Network</source>
-        <translation>Połączono z Siecią</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/ConnectionItem.qml" line="97"/>
+        <location filename="../contents/Connection.qml" line="92"/>
         <source>Connect</source>
-        <translation>Połącz</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/ConnectionItem.qml" line="105"/>
+        <location filename="../contents/Connection.qml" line="100"/>
         <source>Cancel</source>
-        <translation>Anuluj</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/ConnectionItem.qml" line="128"/>
+        <location filename="../contents/Connection.qml" line="123"/>
         <source>Password</source>
-        <translation>Hasło</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../contents/ConnectionItem.qml" line="145"/>
+        <location filename="../contents/Connection.qml" line="139"/>
         <source>Show password</source>
-        <translation>Pokaż hasło</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -46,6 +43,11 @@
         <location filename="../contents/main.qml" line="34"/>
         <source>Network</source>
         <translation>Sieć</translation>
+    </message>
+    <message>
+        <location filename="../contents/main.qml" line="43"/>
+        <source>Use Wi-Fi</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
