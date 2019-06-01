@@ -30,6 +30,7 @@ The following modules and their dependencies are required:
  * [cmake](https://gitlab.kitware.com/cmake/cmake) >= 3.10.0
  * [cmake-shared](https://github.com/lirios/cmake-shared.git) >= 1.0.0
  * [fluid](https://github.com/lirios/fluid.git) >= 1.0.0
+ * [libliri](https://github.com/lirios/libliri.git)
  * [networkmanager-qt](http://quickgit.kde.org/?p=networkmanager-qt.git)
  * [modemmanager-qt](http://quickgit.kde.org/?p=modemmanager-qt.git)
 
