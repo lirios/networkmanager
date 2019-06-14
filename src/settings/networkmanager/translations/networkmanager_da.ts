@@ -34,7 +34,7 @@
     <message>
         <location filename="../contents/HiddenWifiDialog.qml" line="92"/>
         <source>WEP 40/128-bit Key (Hex or ASCII)</source>
-        <translation>WEP 40/128-bit-nøgle (heks eller ASCII)</translation>
+        <translation>WEP 40/128-bit nøgle (heks eller ASCII)</translation>
     </message>
     <message>
         <location filename="../contents/HiddenWifiDialog.qml" line="93"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../contents/IPAddressPage.qml" line="171"/>
         <source>%1/%2 via %3</source>
-        <translation type="unfinished"/>
+        <translation>%1/%2 via %3</translation>
     </message>
 </context>
 <context>
@@ -262,17 +262,17 @@
     <message>
         <location filename="../contents/PasswordListItem.qml" line="71"/>
         <source>Store the password only for this user</source>
-        <translation type="unfinished"/>
+        <translation>Gem kun adgangskoden til denne bruger</translation>
     </message>
     <message>
         <location filename="../contents/PasswordListItem.qml" line="72"/>
         <source>Store the password for all users</source>
-        <translation type="unfinished"/>
+        <translation>Gem adgangskoden til alle brugere</translation>
     </message>
     <message>
         <location filename="../contents/PasswordListItem.qml" line="73"/>
         <source>Ask for this password every time</source>
-        <translation type="unfinished"/>
+        <translation>Spørg om adgangskoden hver gang</translation>
     </message>
 </context>
 <context>
@@ -316,47 +316,47 @@
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="31"/>
         <source>WEP 40/128-bit Key (Hex or ASCII)</source>
-        <translation type="unfinished"/>
+        <translation>WEP 40/128-bit nøgle (Hex eller ASCII)</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="40"/>
         <source>WEP Index</source>
-        <translation type="unfinished"/>
+        <translation>WEP-indeks</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="46"/>
         <source>1 (Default)</source>
-        <translation type="unfinished"/>
+        <translation>1 (standard)</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="47"/>
         <source>2</source>
-        <translation type="unfinished"/>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="48"/>
         <source>3</source>
-        <translation type="unfinished"/>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="49"/>
         <source>4</source>
-        <translation type="unfinished"/>
+        <translation>4</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="55"/>
         <source>Authentication</source>
-        <translation type="unfinished"/>
+        <translation>Autentifikation</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="61"/>
         <source>Open System</source>
-        <translation type="unfinished"/>
+        <translation>Åbent system</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="62"/>
         <source>Shared Key</source>
-        <translation type="unfinished"/>
+        <translation>Delt nøgle</translation>
     </message>
 </context>
 <context>
@@ -364,47 +364,47 @@
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="31"/>
         <source>WEP 128-bit Passphrase</source>
-        <translation type="unfinished"/>
+        <translation>WEP 128-bit adgangskode</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="40"/>
         <source>WEP Index</source>
-        <translation type="unfinished"/>
+        <translation>WEP-indeks</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="46"/>
         <source>1 (Default)</source>
-        <translation type="unfinished"/>
+        <translation>1 (standard)</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="47"/>
         <source>2</source>
-        <translation type="unfinished"/>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="48"/>
         <source>3</source>
-        <translation type="unfinished"/>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="49"/>
         <source>4</source>
-        <translation type="unfinished"/>
+        <translation>4</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="55"/>
         <source>Authentication</source>
-        <translation type="unfinished"/>
+        <translation>Autentifikation</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="61"/>
         <source>Open System</source>
-        <translation type="unfinished"/>
+        <translation>Åbent system</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="62"/>
         <source>Shared Key</source>
-        <translation type="unfinished"/>
+        <translation>Delt nøgle</translation>
     </message>
 </context>
 <context>
@@ -412,7 +412,7 @@
     <message>
         <location filename="../contents/SecurityWpaPsk.qml" line="31"/>
         <source>WPA &amp;&amp; WPA2 Personal</source>
-        <translation type="unfinished"/>
+        <translation>WPA &amp;&amp; WPA2 personlig</translation>
     </message>
 </context>
 <context>
@@ -509,7 +509,7 @@
     <message>
         <location filename="../contents/WiredPage.qml" line="41"/>
         <source>Save this connection</source>
-        <translation type="unfinished"/>
+        <translation>Gem forbindelsen</translation>
     </message>
     <message>
         <location filename="../contents/WiredPage.qml" line="89"/>
@@ -524,7 +524,7 @@
     <message>
         <location filename="../contents/WiredPage.qml" line="119"/>
         <source>Security</source>
-        <translation type="unfinished"/>
+        <translation>Sikkerhed</translation>
     </message>
     <message>
         <location filename="../contents/WiredPage.qml" line="103"/>
@@ -542,48 +542,48 @@
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="44"/>
         <source>Security</source>
-        <translation type="unfinished"/>
+        <translation>Sikkerhed</translation>
     </message>
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="48"/>
         <source>802.1x Security</source>
-        <translation type="unfinished"/>
+        <translation>802.1x-sikkerhed</translation>
     </message>
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="65"/>
         <source>MD5</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>MD5</translation>
     </message>
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="69"/>
         <source>TLS</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>TLS</translation>
     </message>
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="73"/>
         <source>PWD</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>PWD</translation>
     </message>
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="77"/>
         <source>FAST</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>FAST</translation>
     </message>
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="81"/>
         <source>Tunneled TLS</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>Tunneleret TLS</translation>
     </message>
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="85"/>
         <source>Protected EAP (PEAP)</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>Beskyttet EAP (PEAP)</translation>
     </message>
 </context>
 <context>
@@ -686,7 +686,7 @@
     <message>
         <location filename="../contents/WirelessPage.qml" line="40"/>
         <source>Save this connection</source>
-        <translation type="unfinished"/>
+        <translation>Gem forbindelsen</translation>
     </message>
     <message>
         <location filename="../contents/WirelessPage.qml" line="89"/>
@@ -719,49 +719,49 @@
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="44"/>
         <source>Security</source>
-        <translation type="unfinished"/>
+        <translation>Sikkerhed</translation>
     </message>
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="56"/>
         <source>None</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>Ingen</translation>
     </message>
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="60"/>
         <source>WEP 40/128-bit Key (Hex or ASCII)</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>WEP 40/128-bit nøgle (Hex eller ASCII)</translation>
     </message>
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="64"/>
         <source>WEP 128-bit Passphrase</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>WEP 128-bit adgangskode</translation>
     </message>
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="68"/>
         <source>LEAP</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>LEAP</translation>
     </message>
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="72"/>
         <source>Dynamic WEP (802.1x)</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>Dynamisk WEP (802.1x)</translation>
     </message>
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="76"/>
         <source>WPA &amp;&amp; WPA2 Personal</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>WPA &amp;&amp; WPA2 personlig</translation>
     </message>
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="80"/>
         <source>WPA &amp;&amp; WPA2 Enterprise</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>WPA &amp;&amp; WPA2 virksomhed</translation>
     </message>
 </context>
 <context>
