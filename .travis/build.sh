@@ -18,7 +18,9 @@ travis_end "install_packages"
 # Install artifacts
 travis_start "artifacts"
 msg "Install artifacts..."
-/usr/local/bin/liri-download-artifacts $TRAVIS_BRANCH cmakeshared-artifacts.tar.gz
+for name in cmakeshared libliri; do
+    /usr/local/bin/liri-download-artifacts $TRAVIS_BRANCH ${name}-artifacts.tar.gz
+done
 travis_end "artifacts"
 
 # Configure
