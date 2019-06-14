@@ -5,7 +5,6 @@ Network Manager
 [![GitHub release](https://img.shields.io/github/release/lirios/networkmanager.svg)](https://github.com/lirios/networkmanager)
 [![Build Status](https://travis-ci.org/lirios/networkmanager.svg?branch=develop)](https://travis-ci.org/lirios/networkmanager)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/networkmanager.svg)](https://github.com/lirios/networkmanager/issues)
-[![Maintained](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/lirios/networkmanager/commits/develop)
 
 NetworkManager support for Liri.
 
