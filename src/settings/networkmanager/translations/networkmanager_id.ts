@@ -262,17 +262,17 @@
     <message>
         <location filename="../contents/PasswordListItem.qml" line="71"/>
         <source>Store the password only for this user</source>
-        <translation type="unfinished"/>
+        <translation>Simpan sandi hanya untuk pengguna ini</translation>
     </message>
     <message>
         <location filename="../contents/PasswordListItem.qml" line="72"/>
         <source>Store the password for all users</source>
-        <translation type="unfinished"/>
+        <translation>Simpan sandi untuk semua pengguna</translation>
     </message>
     <message>
         <location filename="../contents/PasswordListItem.qml" line="73"/>
         <source>Ask for this password every time</source>
-        <translation type="unfinished"/>
+        <translation>Tanyakan sandi ini setiap terhubung</translation>
     </message>
 </context>
 <context>
