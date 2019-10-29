@@ -326,22 +326,22 @@
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="46"/>
         <source>1 (Default)</source>
-        <translation type="unfinished"/>
+        <translation>1 (Par défaut)</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="47"/>
         <source>2</source>
-        <translation type="unfinished"/>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="48"/>
         <source>3</source>
-        <translation type="unfinished"/>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="49"/>
         <source>4</source>
-        <translation type="unfinished"/>
+        <translation>4</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepHex.qml" line="55"/>
@@ -374,22 +374,22 @@
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="46"/>
         <source>1 (Default)</source>
-        <translation type="unfinished"/>
+        <translation>1 (Par défaut)</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="47"/>
         <source>2</source>
-        <translation type="unfinished"/>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="48"/>
         <source>3</source>
-        <translation type="unfinished"/>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="49"/>
         <source>4</source>
-        <translation type="unfinished"/>
+        <translation>4</translation>
     </message>
     <message>
         <location filename="../contents/SecurityWepPassphrase.qml" line="55"/>
@@ -524,7 +524,7 @@
     <message>
         <location filename="../contents/WiredPage.qml" line="119"/>
         <source>Security</source>
-        <translation type="unfinished"/>
+        <translation>Sécurité</translation>
     </message>
     <message>
         <location filename="../contents/WiredPage.qml" line="103"/>
@@ -542,7 +542,7 @@
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="44"/>
         <source>Security</source>
-        <translation type="unfinished"/>
+        <translation>Sécurité</translation>
     </message>
     <message>
         <location filename="../contents/WiredSecurityPage.qml" line="48"/>
@@ -719,13 +719,13 @@
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="44"/>
         <source>Security</source>
-        <translation type="unfinished"/>
+        <translation>Sécurité</translation>
     </message>
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="56"/>
         <source>None</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>Aucun</translation>
     </message>
     <message>
         <location filename="../contents/WirelessSecurityPage.qml" line="60"/>
