@@ -18,5 +18,6 @@ X-Liri-PluginInfo-EnabledByDefault=true
 
 
 # Translations
+Icon[de]=Präferenz-System-Netzwerk
 Name[de]=Netzwerk
 Comment[de]=Netzwerkstatus und -steuerung
