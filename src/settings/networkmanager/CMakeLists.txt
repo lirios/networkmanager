@@ -19,4 +19,6 @@ liri_add_settings_module(NetworkManager
         contents/SecurityWepHex.qml
         contents/SecurityWepPassphrase.qml
         contents/SecurityWpaPsk.qml
+    TRANSLATIONS_PATH
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../../translations/settings"
 )
