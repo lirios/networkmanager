@@ -17,8 +17,8 @@
   },
   {
     "type": "desktop",
-    "source_file": "",
-    "file_filter": "",
-    "output_path": ""
+    "source_file": "src/settings/networkmanager/metadata.desktop.in",
+    "file_filter": "translations/settings/networkmanager/metadata_<lang>.desktop",
+    "output_path": "src/settings/networkmanager/metadata.desktop"
   }
 ]
