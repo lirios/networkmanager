@@ -3,5 +3,5 @@ liri_add_indicator(NetworkManager
         contents/Connection.qml
         contents/main.qml
     TRANSLATIONS_PATH
-        "${CMAKE_SOURCE_DIR}/translations/indicator"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../../translations/indicator"
 )
