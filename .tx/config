@@ -4,23 +4,23 @@ host = https://www.transifex.com
 [liri-networkmanager.indicator]
 type = QT
 source_lang = en
-source_file = translations/indicators/networkmanager/networkmanager.ts
-file_filter = translations/indicators/networkmanager/networkmanager_<lang>.ts
+source_file = translations/indicator/networkmanager.ts
+file_filter = translations/indicator/networkmanager_<lang>.ts
 
 [liri-networkmanager.indicator-metadata]
 type = DESKTOP
 source_lang = en
 source_file = src/indicators/networkmanager/metadata.desktop.in
-file_filter = translations/indicators/networkmanager/metadata_<lang>.desktop
+file_filter = translations/indicator/metadata_<lang>.desktop
 
 [liri-networkmanager.settings-module]
 type = QT
 source_lang = en
-source_file = translations/settings/networkmanager/networkmanager.ts
-file_filter = translations/settings/networkmanager/networkmanager_<lang>.ts
+source_file = translations/settings/networkmanager.ts
+file_filter = translations/settings/networkmanager_<lang>.ts
 
 [liri-networkmanager.settings-module-metadata]
 type = DESKTOP
 source_lang = en
 source_file = src/settings/networkmanager/metadata.desktop.in
-file_filter = translations/settings/networkmanager/metadata_<lang>.desktop
+file_filter = translations/settings/metadata_<lang>.desktop

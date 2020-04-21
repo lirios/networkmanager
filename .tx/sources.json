@@ -2,23 +2,23 @@
   {
     "type": "ts",
     "directory": "src/indicators/networkmanager/contents",
-    "output_path": "translations/indicators/networkmanager/networkmanager.ts"
+    "output_path": "translations/indicator/networkmanager.ts"
   },
   {
     "type": "desktop",
     "source_file": "src/indicators/networkmanager/metadata.desktop.in",
-    "file_filter": "translations/indicators/networkmanager/metadata_<lang>.desktop",
+    "file_filter": "translations/indicator/metadata_<lang>.desktop",
     "output_path": "src/indicators/networkmanager/metadata.desktop"
   },
   {
     "type": "ts",
     "directory": "src/settings/networkmanager/contents",
-    "output_path": "translations/settings/networkmanager/networkmanager.ts"
+    "output_path": "translations/settings/networkmanager.ts"
   },
   {
     "type": "desktop",
     "source_file": "src/settings/networkmanager/metadata.desktop.in",
-    "file_filter": "translations/settings/networkmanager/metadata_<lang>.desktop",
+    "file_filter": "translations/settings/metadata_<lang>.desktop",
     "output_path": "src/settings/networkmanager/metadata.desktop"
   }
 ]
