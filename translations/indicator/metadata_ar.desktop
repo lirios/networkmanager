@@ -18,4 +18,6 @@ X-Liri-PluginInfo-EnabledByDefault=true
 
 
 # Translations
+Icon[ar]=preferences-system-network
 Name[ar]=الشبكة
+Comment[ar]=حالة الشبكة والتحكم بها
