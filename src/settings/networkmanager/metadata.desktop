@@ -1,6 +1,7 @@
 [Desktop Entry]
 Categories=Qt;X-Liri;Settings;
 Comment=Control how you connect to the Internet
+Comment[ar]=تحكم في كيفية اتصالك بالإنترنت
 Comment[ast]=Controla como te coneutes a internet
 Comment[ca]=Controli com es connecta a Internet
 Comment[cs_CZ]=Řiďte způsob, jakým se připojujete k internetu
@@ -57,6 +58,7 @@ Name[pt_PT]=Rede
 Name[ru]=Сеть
 Name[sk]=Sieť
 Name[tr]=Ağ
+Name[tr_TR]=Şebeke
 Name[zh_CN]=网络
 Name[zh_TW]=網際網路
 OnlyShowIn=X-Liri;
