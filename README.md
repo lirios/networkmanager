@@ -3,8 +3,8 @@ Network Manager
 
 [![License](https://img.shields.io/badge/license-GPLv3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![GitHub release](https://img.shields.io/github/release/lirios/networkmanager.svg)](https://github.com/lirios/networkmanager)
-[![CI](https://github.com/lirios/networkmanager/workflows/CI/badge.svg?branch=develop)](https://github.com/lirios/networkmanager/actions?query=workflow%3ACI)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/networkmanager.svg)](https://github.com/lirios/networkmanager/issues)
+[![CI](https://github.com/lirios/networkmanager/workflows/CI/badge.svg?branch=develop)](https://github.com/lirios/networkmanager/actions?query=workflow%3ACI)
 
 NetworkManager support for Liri.
 
