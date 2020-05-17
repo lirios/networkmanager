@@ -1,9 +1,8 @@
 [Desktop Entry]
 Type=Service
-Name=Network
-Comment=Network status and control
-Keywords=Network;Wired;Wireless;VPN;
-#TRANSLATIONS
+_Name=Network
+_Comment=Network status and control
+_Keywords=Network;Wired;Wireless;VPN;
 Icon=preferences-system-network
 OnlyShowIn=X-Liri;
 X-Liri-ServiceType=Indicator

@@ -7,8 +7,9 @@
   {
     "type": "desktop",
     "source_file": "src/indicators/networkmanager/metadata.desktop.in",
-    "file_filter": "translations/indicator/metadata_<lang>.desktop",
-    "output_path": "src/indicators/networkmanager/metadata.desktop"
+    "dest_file": "src/indicators/networkmanager/metadata.desktop",
+    "file_filter": "translations/indicator/metadata_<lang>.po",
+    "output_path": "translations/indicator/metadata.pot"
   },
   {
     "type": "ts",
@@ -18,7 +19,8 @@
   {
     "type": "desktop",
     "source_file": "src/settings/networkmanager/metadata.desktop.in",
-    "file_filter": "translations/settings/metadata_<lang>.desktop",
-    "output_path": "src/settings/networkmanager/metadata.desktop"
+    "dest_file": "src/settings/networkmanager/metadata.desktop",
+    "file_filter": "translations/settings/metadata_<lang>.po",
+    "output_path": "translations/settings/metadata.pot"
   }
 ]

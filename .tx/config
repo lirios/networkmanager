@@ -8,10 +8,10 @@ source_file = translations/indicator/networkmanager.ts
 file_filter = translations/indicator/networkmanager_<lang>.ts
 
 [liri-networkmanager.indicator-metadata]
-type = DESKTOP
+type = PO
 source_lang = en
-source_file = src/indicators/networkmanager/metadata.desktop.in
-file_filter = translations/indicator/metadata_<lang>.desktop
+source_file = translations/indicator/metadata.pot
+file_filter = translations/indicator/metadata_<lang>.po
 
 [liri-networkmanager.settings-module]
 type = QT
@@ -20,7 +20,7 @@ source_file = translations/settings/networkmanager.ts
 file_filter = translations/settings/networkmanager_<lang>.ts
 
 [liri-networkmanager.settings-module-metadata]
-type = DESKTOP
+type = PO
 source_lang = en
-source_file = src/settings/networkmanager/metadata.desktop.in
-file_filter = translations/settings/metadata_<lang>.desktop
+source_file = translations/settings/metadata.pot
+file_filter = translations/settings/metadata_<lang>.po
