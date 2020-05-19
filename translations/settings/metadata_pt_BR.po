@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Emin Tufan <etcetin@gmail.com>, 2020
+# Luiz Fernando Ranghetti <elchevive68@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -13,28 +13,28 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-19 00:15+0000\n"
 "PO-Revision-Date: 2020-05-17 10:03+0000\n"
-"Last-Translator: Emin Tufan <etcetin@gmail.com>, 2020\n"
-"Language-Team: Turkish (https://www.transifex.com/lirios/teams/71982/tr/)\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive68@gmail.com>, 2020\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/lirios/teams/71982/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. (desktop-to-pot) "Name" entry
 #: metadata.desktop.in:3
 msgctxt "Name entry"
 msgid "Network"
-msgstr "Ağ"
+msgstr "Rede"
 
 #. (desktop-to-pot) "Comment" entry
 #: metadata.desktop.in:4
 msgctxt "Comment entry"
 msgid "Control how you connect to the Internet"
-msgstr "İnternet'e nasıl bağlanacağınızı denetleyin"
+msgstr "Controle como se conectar à internet"
 
 #. (desktop-to-pot) "Keywords" entry
 #: metadata.desktop.in:5
 msgctxt "Keywords entry"
 msgid "network;ethernet;wifi;wired;wireless;"
-msgstr "ağ;ethernet;wifi;kablolu;kablosuz;"
+msgstr "rede;ethernet;wifi;com fio;sem fio;wireless;"
