@@ -79,7 +79,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="137"/>
         <source>WEP index:</source>
-        <translation type="unfinished"/>
+        <translation>WEP index:</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="144"/>
@@ -308,7 +308,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/SecurityTLS.qml" line="76"/>
         <source>Private key password</source>
-        <translation type="unfinished"/>
+        <translation>Password a chiave privata</translation>
     </message>
 </context>
 <context>
@@ -369,7 +369,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/SecurityWepPassphrase.qml" line="40"/>
         <source>WEP Index</source>
-        <translation type="unfinished"/>
+        <translation>WEP Index</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/SecurityWepPassphrase.qml" line="46"/>
@@ -761,7 +761,7 @@
         <location filename="../../src/settings/networkmanager/contents/WirelessSecurityPage.qml" line="80"/>
         <source>WPA &amp;&amp; WPA2 Enterprise</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>WPA &amp;&amp; WPA2 Enterprise</translation>
     </message>
 </context>
 <context>
