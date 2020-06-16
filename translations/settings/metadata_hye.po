@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Moo, 2020
+# Real School <localization@ehayq.am>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -13,28 +13,28 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-16 00:22+0000\n"
 "PO-Revision-Date: 2020-05-17 10:03+0000\n"
-"Last-Translator: Moo, 2020\n"
-"Language-Team: Lithuanian (https://www.transifex.com/lirios/teams/71982/lt/)\n"
+"Last-Translator: Real School <localization@ehayq.am>, 2020\n"
+"Language-Team: Eastern Armenian (https://www.transifex.com/lirios/teams/71982/hye/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lt\n"
-"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
+"Language: hye\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. (desktop-to-pot) "Name" entry
 #: metadata.desktop.in:3
 msgctxt "Name entry"
 msgid "Network"
-msgstr "Tinklas"
+msgstr "Ցանց"
 
 #. (desktop-to-pot) "Comment" entry
 #: metadata.desktop.in:4
 msgctxt "Comment entry"
 msgid "Control how you connect to the Internet"
-msgstr "Valdyti būdus, kaip prisijungsite prie interneto"
+msgstr "Կառավարել թե ինչպէս ես կապանցուած համացանցին"
 
 #. (desktop-to-pot) "Keywords" entry
 #: metadata.desktop.in:5
 msgctxt "Keywords entry"
 msgid "network;ethernet;wifi;wired;wireless;"
-msgstr "tinklas;laidinis;eternetas;belaidis;wifi;"
+msgstr "ցանց;ethernet;wifi;լարային;անլար;"
