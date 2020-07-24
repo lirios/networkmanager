@@ -4,7 +4,7 @@
     <message>
         <location filename="../../src/indicators/networkmanager/contents/Connection.qml" line="50"/>
         <source>%1, %2</source>
-        <translation type="unfinished"/>
+        <translation>%1, %2</translation>
     </message>
     <message>
         <location filename="../../src/indicators/networkmanager/contents/Connection.qml" line="53"/>

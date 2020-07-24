@@ -34,7 +34,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="92"/>
         <source>WEP 40/128-bit Key (Hex or ASCII)</source>
-        <translation type="unfinished"/>
+        <translation>WEP 40/128-bit Key (Hex or ASCII)</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="93"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="94"/>
         <source>LEAP</source>
-        <translation type="unfinished"/>
+        <translation>LEAP</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="95"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="98"/>
         <source>WPS</source>
-        <translation type="unfinished"/>
+        <translation>WPS</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="116"/>
@@ -179,7 +179,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/IPAddressPage.qml" line="73"/>
         <source>Gateway</source>
-        <translation type="unfinished"/>
+        <translation>Шлюз</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/IPAddressPage.qml" line="81"/>
@@ -200,7 +200,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/IPAddressPage.qml" line="128"/>
         <source>DNS</source>
-        <translation type="unfinished"/>
+        <translation>DNS</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/IPAddressPage.qml" line="132"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/IPAddressPage.qml" line="171"/>
         <source>%1/%2 via %3</source>
-        <translation type="unfinished"/>
+        <translation>%1/%2 через %3</translation>
     </message>
 </context>
 <context>
@@ -272,7 +272,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/PasswordListItem.qml" line="73"/>
         <source>Ask for this password every time</source>
-        <translation>Спрашивать это пароль каждый раз</translation>
+        <translation>Спрашивать этот пароль каждый раз</translation>
     </message>
 </context>
 <context>
@@ -280,7 +280,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/SecurityMD5.qml" line="36"/>
         <source>User name</source>
-        <translation>Юзернейм</translation>
+        <translation>Логин</translation>
     </message>
 </context>
 <context>
@@ -445,7 +445,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredDetailsPage.qml" line="93"/>
         <source>DNS</source>
-        <translation type="unfinished"/>
+        <translation>DNS</translation>
     </message>
 </context>
 <context>
@@ -490,7 +490,7 @@
         <location filename="../../src/settings/networkmanager/contents/WiredIdentityPage.qml" line="92"/>
         <location filename="../../src/settings/networkmanager/contents/WiredIdentityPage.qml" line="97"/>
         <source>MAC Address</source>
-        <translation type="unfinished"/>
+        <translation>MAC-адрес</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredIdentityPage.qml" line="103"/>
@@ -501,7 +501,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredIdentityPage.qml" line="114"/>
         <source>MTU</source>
-        <translation type="unfinished"/>
+        <translation>MTU</translation>
     </message>
 </context>
 <context>
@@ -529,12 +529,12 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredPage.qml" line="103"/>
         <source>IPv4</source>
-        <translation type="unfinished"/>
+        <translation>IPv4</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredPage.qml" line="111"/>
         <source>IPv6</source>
-        <translation type="unfinished"/>
+        <translation>IPv6</translation>
     </message>
 </context>
 <context>
@@ -553,25 +553,25 @@
         <location filename="../../src/settings/networkmanager/contents/WiredSecurityPage.qml" line="65"/>
         <source>MD5</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>MD5</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredSecurityPage.qml" line="69"/>
         <source>TLS</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>TLS</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredSecurityPage.qml" line="73"/>
         <source>PWD</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>PWD</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredSecurityPage.qml" line="77"/>
         <source>FAST</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>FAST</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredSecurityPage.qml" line="81"/>
@@ -626,7 +626,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessDetailsPage.qml" line="115"/>
         <source>DNS</source>
-        <translation type="unfinished"/>
+        <translation>DNS</translation>
     </message>
 </context>
 <context>
@@ -660,19 +660,19 @@
         <location filename="../../src/settings/networkmanager/contents/WirelessIdentityPage.qml" line="77"/>
         <location filename="../../src/settings/networkmanager/contents/WirelessIdentityPage.qml" line="82"/>
         <source>SSID</source>
-        <translation type="unfinished"/>
+        <translation>SSID</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessIdentityPage.qml" line="87"/>
         <location filename="../../src/settings/networkmanager/contents/WirelessIdentityPage.qml" line="92"/>
         <source>BSSID</source>
-        <translation type="unfinished"/>
+        <translation>BSSID</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessIdentityPage.qml" line="98"/>
         <location filename="../../src/settings/networkmanager/contents/WirelessIdentityPage.qml" line="103"/>
         <source>MAC Address</source>
-        <translation type="unfinished"/>
+        <translation>MAC-адрес</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessIdentityPage.qml" line="109"/>
@@ -701,12 +701,12 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessPage.qml" line="103"/>
         <source>IPv4</source>
-        <translation type="unfinished"/>
+        <translation>IPv4</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessPage.qml" line="111"/>
         <source>IPv6</source>
-        <translation type="unfinished"/>
+        <translation>IPv6</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessPage.qml" line="119"/>
@@ -743,7 +743,7 @@
         <location filename="../../src/settings/networkmanager/contents/WirelessSecurityPage.qml" line="68"/>
         <source>LEAP</source>
         <extracomment>Security method</extracomment>
-        <translation type="unfinished"/>
+        <translation>LEAP</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessSecurityPage.qml" line="72"/>
@@ -779,7 +779,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/main.qml" line="98"/>
         <source>Wired</source>
-        <translation type="unfinished"/>
+        <translation>Проводной</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/main.qml" line="121"/>
