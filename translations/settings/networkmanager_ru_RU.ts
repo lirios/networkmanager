@@ -39,7 +39,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="93"/>
         <source>WEP 128-bit Passphrase</source>
-        <translation type="unfinished"/>
+        <translation>WEP 128-bit Пароль-фраза</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/HiddenWifiDialog.qml" line="94"/>
@@ -149,7 +149,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/IPAddressPage.qml" line="118"/>
         <source>Automatic (DHCP)</source>
-        <translation type="unfinished"/>
+        <translation>Автоматический (DHCP)</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/IPAddressPage.qml" line="120"/>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/IPAddressPage.qml" line="140"/>
         <source>Separate IP addresses with commas</source>
-        <translation type="unfinished"/>
+        <translation>Разделить IP-адреса запятыми</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/IPAddressPage.qml" line="150"/>
@@ -267,7 +267,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/PasswordListItem.qml" line="72"/>
         <source>Store the password for all users</source>
-        <translation type="unfinished"/>
+        <translation>Хранить пароль для всех пользователей</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/PasswordListItem.qml" line="73"/>
@@ -298,12 +298,12 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/SecurityTLS.qml" line="62"/>
         <source>CA certificate</source>
-        <translation type="unfinished"/>
+        <translation>CA-сертификат</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/SecurityTLS.qml" line="68"/>
         <source>No CA certificate is required</source>
-        <translation type="unfinished"/>
+        <translation>Не требуется сертификат CA</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/SecurityTLS.qml" line="76"/>
@@ -425,12 +425,12 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredDetailsPage.qml" line="49"/>
         <source>IPv4 Address</source>
-        <translation type="unfinished"/>
+        <translation>IPv4-адрес</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredDetailsPage.qml" line="60"/>
         <source>IPv6 Address</source>
-        <translation type="unfinished"/>
+        <translation>IPv6-адрес</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredDetailsPage.qml" line="71"/>
@@ -496,7 +496,7 @@
         <location filename="../../src/settings/networkmanager/contents/WiredIdentityPage.qml" line="103"/>
         <location filename="../../src/settings/networkmanager/contents/WiredIdentityPage.qml" line="108"/>
         <source>Cloned Address</source>
-        <translation type="unfinished"/>
+        <translation>Клонированный адрес</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WiredIdentityPage.qml" line="114"/>
@@ -606,12 +606,12 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessDetailsPage.qml" line="71"/>
         <source>IPv4 Address</source>
-        <translation type="unfinished"/>
+        <translation>IPv4-адрес</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessDetailsPage.qml" line="82"/>
         <source>IPv6 Address</source>
-        <translation type="unfinished"/>
+        <translation>IPv6-адрес</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/WirelessDetailsPage.qml" line="93"/>
@@ -678,7 +678,7 @@
         <location filename="../../src/settings/networkmanager/contents/WirelessIdentityPage.qml" line="109"/>
         <location filename="../../src/settings/networkmanager/contents/WirelessIdentityPage.qml" line="114"/>
         <source>Cloned Address</source>
-        <translation type="unfinished"/>
+        <translation>Клонированный адрес</translation>
     </message>
 </context>
 <context>
@@ -794,7 +794,7 @@
     <message>
         <location filename="../../src/settings/networkmanager/contents/main.qml" line="250"/>
         <source>Network Proxy</source>
-        <translation type="unfinished"/>
+        <translation>Прокси</translation>
     </message>
     <message>
         <location filename="../../src/settings/networkmanager/contents/main.qml" line="251"/>
