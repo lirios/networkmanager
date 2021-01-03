@@ -1,15 +1,15 @@
 [
   {
     "type": "ts",
-    "directory": "src/indicators/networkmanager/contents",
-    "output_path": "translations/indicator/networkmanager.ts"
+    "directory": "src/statusarea/networkmanager/contents",
+    "output_path": "translations/statusarea/networkmanager.ts"
   },
   {
     "type": "desktop",
-    "source_file": "src/indicators/networkmanager/metadata.desktop.in",
-    "dest_file": "src/indicators/networkmanager/metadata.desktop",
-    "file_filter": "translations/indicator/metadata_<lang>.po",
-    "output_path": "translations/indicator/metadata.pot"
+    "source_file": "src/statusarea/networkmanager/metadata.desktop.in",
+    "dest_file": "src/statusarea/networkmanager/metadata.desktop",
+    "file_filter": "translations/statusarea/metadata_<lang>.po",
+    "output_path": "translations/statusarea/metadata.pot"
   },
   {
     "type": "ts",

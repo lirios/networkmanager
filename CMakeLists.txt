@@ -34,5 +34,5 @@ find_package(Qt5 "${QT_MIN_VERSION}"
 
 ## Add subdirectories:
 add_subdirectory(src/imports/networkmanager)
-add_subdirectory(src/indicators/networkmanager)
 add_subdirectory(src/settings/networkmanager)
+add_subdirectory(src/statusarea/networkmanager)

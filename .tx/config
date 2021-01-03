@@ -4,14 +4,14 @@ host = https://www.transifex.com
 [liri-networkmanager.indicator]
 type = QT
 source_lang = en
-source_file = translations/indicator/networkmanager.ts
-file_filter = translations/indicator/networkmanager_<lang>.ts
+source_file = translations/statusarea/networkmanager.ts
+file_filter = translations/statusarea/networkmanager_<lang>.ts
 
 [liri-networkmanager.indicator-metadata]
 type = PO
 source_lang = en
-source_file = translations/indicator/metadata.pot
-file_filter = translations/indicator/metadata_<lang>.po
+source_file = translations/statusarea/metadata.pot
+file_filter = translations/statusarea/metadata_<lang>.po
 
 [liri-networkmanager.settings-module]
 type = QT
