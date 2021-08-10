@@ -19,7 +19,7 @@
     <message>
         <location filename="../../src/statusarea/networkmanager/contents/Connection.qml" line="92"/>
         <source>Connect</source>
-        <translation>verbinden</translation>
+        <translation>Verbinden</translation>
     </message>
     <message>
         <location filename="../../src/statusarea/networkmanager/contents/Connection.qml" line="100"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../../src/statusarea/networkmanager/contents/Connection.qml" line="139"/>
         <source>Show password</source>
-        <translation>Zeige Passwort</translation>
+        <translation>Passwort anzeigen</translation>
     </message>
 </context>
 <context>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../../src/statusarea/networkmanager/contents/main.qml" line="58"/>
         <source>Wi-Fi</source>
-        <translation type="unfinished"/>
+        <translation>WLAN</translation>
     </message>
 </context>
 </TS>

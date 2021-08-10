@@ -49,7 +49,7 @@
     <message>
         <location filename="../../src/statusarea/networkmanager/contents/main.qml" line="58"/>
         <source>Wi-Fi</source>
-        <translation type="unfinished"/>
+        <translation>Wi-Fi</translation>
     </message>
 </context>
 </TS>
