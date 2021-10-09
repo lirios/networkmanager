@@ -46,3 +46,5 @@ liri_add_qml_plugin(nm
         KF5::ModemManagerQt
         Liri::Notifications
 )
+
+liri_finalize_qml_plugin(nm)
